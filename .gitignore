@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# Neo4j
+neo4j/data/
+neo4j/logs/
+*.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Personal/Sensitive
+**/contact_info_private.txt
+**/sensitive/
+
+# Build artifacts
+*.pdf
+career-graph/data/career_graph.json
+
+# Logs
+*.log
