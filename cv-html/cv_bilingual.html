@@ -130,6 +130,8 @@
                 align-items: flex-start;
                 gap: 15px;
                 page-break-after: avoid;
+                background: white !important;
+                color: #333 !important;
             }
 
             .header-photo {
@@ -164,7 +166,7 @@
                 display: block;
                 text-align: center;
                 flex-shrink: 0;
-                margin-left: auto;
+                margin: 0 auto;
             }
 
             .qr-code-print img {
@@ -175,7 +177,7 @@
 
             .qr-code-print small {
                 font-size: 8px;
-                color: white;
+                color: #333;
                 display: block;
             }
 
@@ -185,7 +187,8 @@
 
             .section {
                 margin-bottom: 20px;
-                page-break-inside: avoid;
+                page-break-inside: auto;  /* Allow breaking for small sections */
+                page-break-before: auto;  /* Allow breaking before small sections */
             }
 
             .section-title {
@@ -225,13 +228,13 @@
             }
 
             .skills-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 5px;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 3px;
             }
 
             .skill-item {
-                padding: 4px 8px;
-                font-size: 10px;
+                padding: 3px 5px;
+                font-size: 9px;
             }
 
             .highlight-box {
@@ -276,6 +279,10 @@
             .status-badge {
                 font-size: 9px;
                 padding: 2px 8px;
+            }
+
+            .why-fit-section {
+                display: none !important;
             }
         }
 
@@ -477,7 +484,8 @@
                 margin: 0;
             }
             .section {
-                page-break-inside: avoid;
+                page-break-inside: auto;  /* Allow breaking for small sections */
+                page-break-before: auto;  /* Allow breaking before small sections */
             }
         }
 
@@ -506,19 +514,19 @@
 </head>
 <body>
     <div class="lang-switch">
-        <button onclick="switchLanguage('pl')" class="lang-btn active" data-lang="pl">PL</button>
-        <button onclick="switchLanguage('en')" class="lang-btn" data-lang="en">EN</button>
+        <button onclick="switchLanguage('pl')" class="lang-btn" data-lang="pl">PL</button>
+        <button onclick="switchLanguage('en')" class="lang-btn active" data-lang="en">EN</button>
     </div>
 
     <div class="container">
         <!-- QR Code -->
         <div class="qr-code-container">
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://sebastiangruza.com" alt="QR Code">
-            <small>sebastiangruza.com</small>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://sebastiangruza.github.io/CV" alt="QR Code">
+            <small>sebastiangruza.github.io/CV</small>
         </div>
 
         <!-- POLISH VERSION -->
-        <div class="lang-content active" id="content-pl">
+        <div class="lang-content" id="content-pl">
             <div class="header">
                 <!-- Graph decoration -->
                 <div class="graph-decoration">
@@ -558,15 +566,15 @@
                     </div>
                 </div>
                 <div class="qr-code-print">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://sebastiangruza.com" alt="QR Code">
-                    <small>sebastiangruza.com</small>
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://sebastiangruza.github.io/CV" alt="QR Code">
+                    <small>sebastiangruza.github.io/CV</small>
                 </div>
             </div>
 
             <div class="content">
                 <div class="section">
                     <h3 class="section-title">🎯 Profil zawodowy</h3>
-                    <p><strong>Graph Database Engineer z 9-letnim doświadczeniem</strong> w projektowaniu i optymalizacji systemów opartych na bazach grafowych (Neo4j), w tym <strong>3+ lata intensywnej pracy z Neo4j i Cypher</strong> w środowisku produkcyjnym. Expert w <strong>Java</strong> i <strong>Spring Framework</strong> z udokumentowanym doświadczeniem w budowie skalowalnych algorytmów grafowych dla platformy blockchain analytics. Magister informatyki (Deep Learning, 5.0) z pasją do optymalizacji wydajności i architektury danych.</p>
+                    <p><strong>Graph Database Engineer z 3-letnim doświadczeniem w Neo4j i Cypher</strong> (2016-2019) oraz <strong>9-letnim doświadczeniem w programowaniu Java i Spring Framework</strong>. Expert w projektowaniu i optymalizacji systemów grafowych w środowisku produkcyjnym, z doświadczeniem w budowie skalowalnych algorytmów grafowych dla platformy blockchain analytics. Magister informatyki (Deep Learning, 5.0) z pasją do optymalizacji wydajności i architektury danych.</p>
 
                     <div class="highlight-box">
                         <h3>✅ Kluczowe kompetencje:</h3>
@@ -608,24 +616,13 @@
                             <div class="job-period">Październik 2016 - Styczeń 2024 (7 lat 4 mies.) | Warszawa, Polska</div>
                         </div>
                         <div class="job-description">
-                            <h4>Fase 1 (2016-2019): Neo4j & Graph Databases - Founding Engineer</h4>
-                            <p><strong>Główne osiągnięcia:</strong></p>
+                            <p><strong>🚀 Founding Engineer platformy blockchain analytics - od Neo4j do cloud-scale</strong></p>
                             <ul>
-                                <li><strong>Zaprojektowanie i implementacja algorytmu "Proximity"</strong> - własny system propagacji ryzyka dla adresów kryptowalutowych (Bitcoin, Ethereum)</li>
-                                <li><strong>Graph Data Modeling:</strong> Projektowanie złożonych modeli grafowych dla analizy transakcji blockchain</li>
-                                <li><strong>Cypher Query Optimization:</strong> Zaawansowane optymalizacje zapytań Cypher dla grafów o milionach węzłów i relacji</li>
-                                <li><strong>Performance Tuning:</strong> Optymalizacja indeksów, schematów i ścieżek zapytań w Neo4j</li>
+                                <li><strong>Zaprojektowałem algorytm "Proximity"</strong> - własny system propagacji ryzyka dla Bitcoin/Ethereum używany przez banki i giełdy krypto</li>
+                                <li><strong>2 major migrations:</strong> Neo4j → MaprDB (2019) → AWS Cloud (2024) - zero downtime, miliony transakcji dziennie</li>
+                                <li><strong>Expert-level Neo4j & Cypher:</strong> Optymalizacja grafów z milionami węzłów, AML/KYC compliance</li>
                             </ul>
-                            <p><strong>Kluczowe technologie:</strong> Neo4j (expert-level), Cypher queries, Java, Graph Algorithms, AML/KYC compliance, Bitcoin, Ethereum</p>
-
-                            <h4>Fase 2 (2019-2024): Migracja i skalowanie - Migration Architect</h4>
-                            <p><strong>Główne osiągnięcia:</strong></p>
-                            <ul>
-                                <li><strong>Architecture Migration:</strong> Przeprojektowanie algorytmu "Proximity" z Neo4j na MaprDB (NoSQL) dla zwiększonej skalowalności</li>
-                                <li><strong>Migration Strategy:</strong> Hands-on implementacja strategii migracji, dual-write approach, zero-downtime cutover</li>
-                                <li><strong>Performance Optimization:</strong> Dostosowanie zapytań i struktur danych pod NoSQL paradigm</li>
-                            </ul>
-                            <p><strong>Technologie:</strong> MaprDB (NoSQL), Java, Spring Framework, distributed systems</p>
+                            <p><strong>Tech:</strong> Neo4j, Cypher, MaprDB, Java, Spring, AWS (S3, DynamoDB, Iceberg)</p>
                         </div>
                     </div>
 
@@ -683,7 +680,7 @@
                         </div>
                         <div class="job-description">
                             <p>Unikalna kombinacja: IT + analiza danych + ekonomia</p>
-                            <p><strong>Teoria Grafów (kurs):</strong></p>
+                            <p><strong>Teoria Grafów (przedmiot na studiach):</strong></p>
                             <ul>
                                 <li>Realizacja projektów programistycznych z zakresu teorii grafów</li>
                                 <li>Implementacje algorytmów grafowych dla innych studentów</li>
@@ -698,41 +695,34 @@
 
                     <h4 style="color: #2C3E50; margin-top: 20px; margin-bottom: 10px;">Graph Databases (Expert)</h4>
                     <div class="skills-grid">
-                        <div class="skill-item"><strong>Neo4j:</strong> 3+ lata produkcyjnego doświadczenia</div>
-                        <div class="skill-item"><strong>Cypher:</strong> Expert-level queries & optimization</div>
-                        <div class="skill-item"><strong>Graph Algorithms:</strong> Risk propagation, path analysis</div>
-                        <div class="skill-item"><strong>TSP:</strong> Traveling Salesman Problem solver</div>
-                        <div class="skill-item"><strong>VRP-TW:</strong> Vehicle Routing Problem</div>
-                        <div class="skill-item"><strong>Graph Theory:</strong> 12+ lat doświadczenia</div>
+                        <div class="skill-item"><strong>Neo4j:</strong> 3+ lata produkcyjne</div>
+                        <div class="skill-item"><strong>Cypher:</strong> Expert queries</div>
+                        <div class="skill-item"><strong>Graph Algorithms:</strong> Risk propagation</div>
+                        <div class="skill-item"><strong>Graph Theory:</strong> 12+ lat</div>
                     </div>
 
                     <h4 style="color: #2C3E50; margin-top: 20px; margin-bottom: 10px;">Backend Development (Expert)</h4>
                     <div class="skills-grid">
                         <div class="skill-item"><strong>Java:</strong> 11+ lat</div>
                         <div class="skill-item"><strong>Spring Framework:</strong> Expert</div>
-                        <div class="skill-item"><strong>Spring Boot:</strong> Production-ready apps</div>
-                        <div class="skill-item"><strong>REST APIs:</strong> Design & implementation</div>
-                        <div class="skill-item"><strong>Design Patterns:</strong> Clean code</div>
+                        <div class="skill-item"><strong>Spring Boot:</strong> Production apps</div>
+                        <div class="skill-item"><strong>REST APIs:</strong> Design & impl.</div>
                     </div>
 
                     <h4 style="color: #2C3E50; margin-top: 20px; margin-bottom: 10px;">Databases & Cloud (Advanced)</h4>
                     <div class="skills-grid">
-                        <div class="skill-item"><strong>AWS S3:</strong> Object storage</div>
-                        <div class="skill-item"><strong>AWS DynamoDB:</strong> NoSQL serverless</div>
-                        <div class="skill-item"><strong>Apache Iceberg:</strong> Data lakehouse</div>
-                        <div class="skill-item"><strong>MaprDB:</strong> 5 lat produkcyjnego doświadczenia</div>
-                        <div class="skill-item"><strong>MySQL:</strong> Traditional RDBMS</div>
-                        <div class="skill-item"><strong>Oracle PL/SQL:</strong> Enterprise databases</div>
+                        <div class="skill-item"><strong>AWS:</strong> S3, DynamoDB, Iceberg</div>
+                        <div class="skill-item"><strong>MaprDB:</strong> 5 lat produkcyjne</div>
+                        <div class="skill-item"><strong>MySQL:</strong> RDBMS</div>
+                        <div class="skill-item"><strong>Oracle PL/SQL:</strong> Enterprise DB</div>
                     </div>
 
                     <h4 style="color: #2C3E50; margin-top: 20px; margin-bottom: 10px;">Domain Expertise</h4>
                     <div class="skills-grid">
-                        <div class="skill-item"><strong>Blockchain Analytics:</strong> BTC, ETH</div>
-                        <div class="skill-item"><strong>AML/KYC:</strong> Compliance & risk scoring</div>
-                        <div class="skill-item"><strong>GPU Programming:</strong> Aparapi (Java → OpenCL)</div>
-                        <div class="skill-item"><strong>Genetic Algorithms:</strong> Optimization</div>
-                        <div class="skill-item"><strong>AI Tools:</strong> Claude Code (production)</div>
-                        <div class="skill-item"><strong>Python:</strong> OR-Tools, Flask</div>
+                        <div class="skill-item"><strong>Blockchain:</strong> BTC, ETH analytics</div>
+                        <div class="skill-item"><strong>AML/KYC:</strong> Compliance</div>
+                        <div class="skill-item"><strong>GPU:</strong> Aparapi, parallel computing</div>
+                        <div class="skill-item"><strong>AI Tools:</strong> Claude Code</div>
                     </div>
                 </div>
 
@@ -774,6 +764,17 @@
                 </div>
 
                 <div class="section">
+                    <h3 class="section-title">🚀 Dostępność</h3>
+                    <ul>
+                        <li><strong>Tryb pracy:</strong> 100% remote ✅</li>
+                        <li><strong>Obecne zatrudnienie:</strong> Niepełny etat (umowa o pracę)</li>
+                        <li><strong>Forma współpracy:</strong> B2B contract ✅</li>
+                        <li><strong>Okres wypowiedzenia:</strong> 3 miesiące</li>
+                        <li><strong>Plan na okres wypowiedzenia:</strong> Odświeżenie i uzupełnienie wiedzy Neo4j (nowe wersje, features, best practices od 2019)</li>
+                    </ul>
+                </div>
+
+                <div class="section why-fit-section">
                     <h3 class="section-title">🎯 Dlaczego pasuję do roli Graph Database Engineer?</h3>
 
                     <div class="highlight-box">
@@ -833,22 +834,11 @@
 
                     <p style="margin-top: 20px;"><strong>Dopasowanie: 100% wymagań + wszystkie nice-to-have</strong></p>
                 </div>
-
-                <div class="section">
-                    <h3 class="section-title">🚀 Dostępność</h3>
-                    <ul>
-                        <li><strong>Tryb pracy:</strong> 100% remote ✅</li>
-                        <li><strong>Obecne zatrudnienie:</strong> Niepełny etat (umowa o pracę)</li>
-                        <li><strong>Forma współpracy:</strong> B2B contract ✅</li>
-                        <li><strong>Okres wypowiedzenia:</strong> 3 miesiące</li>
-                        <li><strong>Plan na okres wypowiedzenia:</strong> Odświeżenie i uzupełnienie wiedzy Neo4j (nowe wersje, features, best practices od 2019)</li>
-                    </ul>
-                </div>
             </div>
         </div>
 
         <!-- ENGLISH VERSION -->
-        <div class="lang-content" id="content-en">
+        <div class="lang-content active" id="content-en">
             <div class="header">
                 <!-- Graph decoration -->
                 <div class="graph-decoration">
@@ -888,15 +878,15 @@
                     </div>
                 </div>
                 <div class="qr-code-print">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://sebastiangruza.com" alt="QR Code">
-                    <small>sebastiangruza.com</small>
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://sebastiangruza.github.io/CV" alt="QR Code">
+                    <small>sebastiangruza.github.io/CV</small>
                 </div>
             </div>
 
             <div class="content">
                 <div class="section">
                     <h3 class="section-title">🎯 Professional Profile</h3>
-                    <p><strong>Graph Database Engineer with 9 years of experience</strong> in designing and optimizing graph-based database systems (Neo4j), including <strong>3+ years of intensive Neo4j and Cypher work</strong> in production environments. Expert in <strong>Java</strong> and <strong>Spring Framework</strong> with documented experience building scalable graph algorithms for blockchain analytics platforms. Master's degree in Computer Science (Deep Learning, 5.0 GPA) with passion for performance optimization and data architecture.</p>
+                    <p><strong>Graph Database Engineer with 3 years of Neo4j and Cypher experience</strong> (2016-2019) and <strong>9 years of Java and Spring Framework programming</strong>. Expert in designing and optimizing graph systems in production environments, with experience building scalable graph algorithms for blockchain analytics platforms. Master's degree in Computer Science (Deep Learning, 5.0 GPA) with passion for performance optimization and data architecture.</p>
 
                     <div class="highlight-box">
                         <h3>✅ Key Competencies:</h3>
@@ -938,24 +928,13 @@
                             <div class="job-period">October 2016 - January 2024 (7 years 4 months) | Warsaw, Poland</div>
                         </div>
                         <div class="job-description">
-                            <h4>Phase 1 (2016-2019): Neo4j & Graph Databases - Founding Engineer</h4>
-                            <p><strong>Key Achievements:</strong></p>
+                            <p><strong>🚀 Founding Engineer of blockchain analytics platform - from Neo4j to cloud-scale</strong></p>
                             <ul>
-                                <li><strong>Designed and implemented "Proximity" algorithm</strong> - proprietary risk propagation system for cryptocurrency addresses (Bitcoin, Ethereum)</li>
-                                <li><strong>Graph Data Modeling:</strong> Designed complex graph models for blockchain transaction analysis</li>
-                                <li><strong>Cypher Query Optimization:</strong> Advanced Cypher query optimization for graphs with millions of nodes and relationships</li>
-                                <li><strong>Performance Tuning:</strong> Optimization of indexes, schemas, and query paths in Neo4j</li>
+                                <li><strong>Designed "Proximity" algorithm</strong> - proprietary risk propagation system for Bitcoin/Ethereum used by banks and crypto exchanges</li>
+                                <li><strong>2 major migrations:</strong> Neo4j → MaprDB (2019) → AWS Cloud (2024) - zero downtime, millions of transactions daily</li>
+                                <li><strong>Expert-level Neo4j & Cypher:</strong> Optimized graphs with millions of nodes, AML/KYC compliance</li>
                             </ul>
-                            <p><strong>Key Technologies:</strong> Neo4j (expert-level), Cypher queries, Java, Graph Algorithms, AML/KYC compliance, Bitcoin, Ethereum</p>
-
-                            <h4>Phase 2 (2019-2024): Migration and Scaling - Migration Architect</h4>
-                            <p><strong>Key Achievements:</strong></p>
-                            <ul>
-                                <li><strong>Architecture Migration:</strong> Redesigned "Proximity" algorithm from Neo4j to MaprDB (NoSQL) for increased scalability</li>
-                                <li><strong>Migration Strategy:</strong> Hands-on implementation of migration strategy, dual-write approach, zero-downtime cutover</li>
-                                <li><strong>Performance Optimization:</strong> Adapted queries and data structures to NoSQL paradigm</li>
-                            </ul>
-                            <p><strong>Technologies:</strong> MaprDB (NoSQL), Java, Spring Framework, distributed systems</p>
+                            <p><strong>Tech:</strong> Neo4j, Cypher, MaprDB, Java, Spring, AWS (S3, DynamoDB, Iceberg)</p>
                         </div>
                     </div>
 
@@ -1013,7 +992,7 @@
                         </div>
                         <div class="job-description">
                             <p>Unique combination: IT + data analysis + economics</p>
-                            <p><strong>Graph Theory (course):</strong></p>
+                            <p><strong>Graph Theory (university course):</strong></p>
                             <ul>
                                 <li>Completed programming projects in graph theory</li>
                                 <li>Implemented graph algorithms for fellow students</li>
@@ -1029,10 +1008,8 @@
                     <h4 style="color: #2C3E50; margin-top: 20px; margin-bottom: 10px;">Graph Databases (Expert)</h4>
                     <div class="skills-grid">
                         <div class="skill-item"><strong>Neo4j:</strong> 3+ years production</div>
-                        <div class="skill-item"><strong>Cypher:</strong> Expert-level queries</div>
+                        <div class="skill-item"><strong>Cypher:</strong> Expert queries</div>
                         <div class="skill-item"><strong>Graph Algorithms:</strong> Risk propagation</div>
-                        <div class="skill-item"><strong>TSP:</strong> Traveling Salesman Problem</div>
-                        <div class="skill-item"><strong>VRP-TW:</strong> Vehicle Routing</div>
                         <div class="skill-item"><strong>Graph Theory:</strong> 12+ years</div>
                     </div>
 
@@ -1042,16 +1019,13 @@
                         <div class="skill-item"><strong>Spring Framework:</strong> Expert</div>
                         <div class="skill-item"><strong>Spring Boot:</strong> Production apps</div>
                         <div class="skill-item"><strong>REST APIs:</strong> Design & impl.</div>
-                        <div class="skill-item"><strong>Design Patterns:</strong> Clean code</div>
                     </div>
 
                     <h4 style="color: #2C3E50; margin-top: 20px; margin-bottom: 10px;">Databases & Cloud (Advanced)</h4>
                     <div class="skills-grid">
-                        <div class="skill-item"><strong>AWS S3:</strong> Object storage</div>
-                        <div class="skill-item"><strong>AWS DynamoDB:</strong> NoSQL serverless</div>
-                        <div class="skill-item"><strong>Apache Iceberg:</strong> Data lakehouse</div>
+                        <div class="skill-item"><strong>AWS:</strong> S3, DynamoDB, Iceberg</div>
                         <div class="skill-item"><strong>MaprDB:</strong> 5 years production</div>
-                        <div class="skill-item"><strong>MySQL:</strong> Traditional RDBMS</div>
+                        <div class="skill-item"><strong>MySQL:</strong> RDBMS</div>
                         <div class="skill-item"><strong>Oracle PL/SQL:</strong> Enterprise DB</div>
                     </div>
 
@@ -1059,10 +1033,8 @@
                     <div class="skills-grid">
                         <div class="skill-item"><strong>Blockchain:</strong> BTC, ETH analytics</div>
                         <div class="skill-item"><strong>AML/KYC:</strong> Compliance</div>
-                        <div class="skill-item"><strong>GPU Programming:</strong> Aparapi</div>
-                        <div class="skill-item"><strong>Genetic Algorithms:</strong> Optimization</div>
+                        <div class="skill-item"><strong>GPU:</strong> Aparapi, parallel computing</div>
                         <div class="skill-item"><strong>AI Tools:</strong> Claude Code</div>
-                        <div class="skill-item"><strong>Python:</strong> OR-Tools, Flask</div>
                     </div>
                 </div>
 
@@ -1104,6 +1076,17 @@
                 </div>
 
                 <div class="section">
+                    <h3 class="section-title">🚀 Availability</h3>
+                    <ul>
+                        <li><strong>Work mode:</strong> 100% remote ✅</li>
+                        <li><strong>Current employment:</strong> Part-time (employment contract)</li>
+                        <li><strong>Contract type:</strong> B2B contract ✅</li>
+                        <li><strong>Notice period:</strong> 3 months</li>
+                        <li><strong>Notice period plan:</strong> Refresh and update Neo4j knowledge (new versions, features, best practices since 2019)</li>
+                    </ul>
+                </div>
+
+                <div class="section why-fit-section">
                     <h3 class="section-title">🎯 Why I'm a Great Fit for Graph Database Engineer Role</h3>
 
                     <div class="highlight-box">
@@ -1162,17 +1145,6 @@
                     </table>
 
                     <p style="margin-top: 20px;"><strong>Match: 100% requirements + all nice-to-haves</strong></p>
-                </div>
-
-                <div class="section">
-                    <h3 class="section-title">🚀 Availability</h3>
-                    <ul>
-                        <li><strong>Work mode:</strong> 100% remote ✅</li>
-                        <li><strong>Current employment:</strong> Part-time (employment contract)</li>
-                        <li><strong>Contract type:</strong> B2B contract ✅</li>
-                        <li><strong>Notice period:</strong> 3 months</li>
-                        <li><strong>Notice period plan:</strong> Refresh and update Neo4j knowledge (new versions, features, best practices since 2019)</li>
-                    </ul>
                 </div>
             </div>
         </div>
