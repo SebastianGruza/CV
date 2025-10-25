@@ -5,14 +5,17 @@
 
 // Store network instances globally for potential external access
 const careerGraphNetworks = {};
+const careerGraphPhysicsState = {};
 
 /**
  * Initialize a career graph visualization in the specified container
  * @param {string} containerId - DOM element ID for the graph container
+ * @param {string} toggleButtonId - DOM element ID for the physics toggle button
  * @returns {vis.Network|null} - Network instance or null if container not found
  */
-function initCareerGraph(containerId) {
+function initCareerGraph(containerId, toggleButtonId) {
     const container = document.getElementById(containerId);
+    const toggleButton = document.getElementById(toggleButtonId);
 
     if (!container) {
         console.warn(`Career Graph: Container "${containerId}" not found`);
@@ -29,8 +32,9 @@ function initCareerGraph(containerId) {
         // Create the network
         const network = new vis.Network(container, data, careerGraphConfig);
 
-        // Store network instance
+        // Store network instance and physics state
         careerGraphNetworks[containerId] = network;
+        careerGraphPhysicsState[containerId] = true; // Physics enabled by default
 
         // Event listeners for better UX
         network.on('stabilizationProgress', function(params) {
@@ -63,6 +67,33 @@ function initCareerGraph(containerId) {
             // For now, vis.js handles hover highlighting via config
         });
 
+        // Setup physics toggle button if provided
+        if (toggleButton) {
+            toggleButton.addEventListener('click', function() {
+                const currentState = careerGraphPhysicsState[containerId];
+                const newState = !currentState;
+
+                // Toggle physics
+                network.setOptions({ physics: { enabled: newState } });
+                careerGraphPhysicsState[containerId] = newState;
+
+                // Update button text and style
+                if (newState) {
+                    toggleButton.textContent = toggleButton.id.includes('-en')
+                        ? '⏸️ Disable physics'
+                        : '⏸️ Wyłącz fizykę';
+                    toggleButton.classList.remove('disabled');
+                } else {
+                    toggleButton.textContent = toggleButton.id.includes('-en')
+                        ? '▶️ Enable physics'
+                        : '▶️ Włącz fizykę';
+                    toggleButton.classList.add('disabled');
+                }
+
+                console.log(`Career Graph (${containerId}): Physics ${newState ? 'enabled' : 'disabled'}`);
+            });
+        }
+
         console.log(`Career Graph (${containerId}): Initialized successfully`);
         return network;
 
@@ -78,9 +109,9 @@ function initCareerGraph(containerId) {
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Career Graph: Initializing visualizations...');
 
-    // Initialize both language versions
-    initCareerGraph('career-graph-pl');
-    initCareerGraph('career-graph-en');
+    // Initialize both language versions with physics toggle buttons
+    initCareerGraph('career-graph-pl', 'toggle-physics-pl');
+    initCareerGraph('career-graph-en', 'toggle-physics-en');
 
     console.log('Career Graph: All visualizations initialized');
 });

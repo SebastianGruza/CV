@@ -53,6 +53,34 @@
     border: 2px solid #333;
 }
 
+/* Physics toggle button */
+.physics-toggle-btn {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #3498DB 0%, #2C3E50 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.physics-toggle-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.physics-toggle-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.physics-toggle-btn.disabled {
+    background: linear-gradient(135deg, #95A5A6 0%, #7F8C8D 100%);
+}
+
 /* Print styles - hide graph in print version */
 @media print {
     .career-graph-section {

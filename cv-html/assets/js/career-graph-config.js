@@ -9,10 +9,10 @@ const careerGraphConfig = {
         size: 22,
         font: {
             size: 11,
-            color: '#ffffff',
             bold: true,
             multi: true,
             vadjust: 0
+            // color per-group
         },
         borderWidth: 2,
         borderWidthSelected: 3,
@@ -25,22 +25,22 @@ const careerGraphConfig = {
         },
         scaling: {
             min: 10,
-            max: 35
+            max: 40
         }
     },
 
     edges: {
         width: 2,
         color: {
-            color: '#95A5A6',
+            color: '#7F8C8D',
             highlight: '#2C3E50',
             hover: '#2C3E50',
-            opacity: 0.5
+            opacity: 0.8
         },
         smooth: {
             enabled: true,
             type: 'continuous',
-            roundness: 0.5
+            roundness: 0.3
         },
         arrows: {
             to: {
@@ -51,7 +51,7 @@ const careerGraphConfig = {
         },
         font: {
             size: 10,
-            color: '#666666',
+            color: '#555555',
             strokeWidth: 0,
             align: 'middle'
         },
@@ -68,11 +68,11 @@ const careerGraphConfig = {
         },
         barnesHut: {
             gravitationalConstant: -10000,
-            centralGravity: 0.3,
-            springLength: 120,
-            springConstant: 0.04,
+            centralGravity: 0.25,
+            springLength: 150,
+            springConstant: 0.03,
             damping: 0.09,
-            avoidOverlap: 0.5
+            avoidOverlap: 0.8
         },
         minVelocity: 0.75,
         solver: 'barnesHut',
@@ -94,35 +94,22 @@ const careerGraphConfig = {
     },
 
     groups: {
-        education: {
+        role: {
             color: {
-                background: '#E74C3C',
-                border: '#C0392B',
+                background: '#9B59B6',
+                border: '#7D3C98',
                 highlight: {
-                    background: '#E74C3C',
-                    border: '#922B21'
+                    background: '#9B59B6',
+                    border: '#5B2C6F'
                 },
                 hover: {
-                    background: '#EC7063',
-                    border: '#C0392B'
+                    background: '#AF7AC5',
+                    border: '#7D3C98'
                 }
             },
-            size: 25
-        },
-        skill: {
-            color: {
-                background: '#3498DB',
-                border: '#2874A6',
-                highlight: {
-                    background: '#3498DB',
-                    border: '#1B4F72'
-                },
-                hover: {
-                    background: '#5DADE2',
-                    border: '#2874A6'
-                }
-            },
-            size: 22
+            size: 32,
+            borderWidth: 3,
+            font: { color: '#ffffff' }
         },
         project: {
             color: {
@@ -137,7 +124,9 @@ const careerGraphConfig = {
                     border: '#1E8449'
                 }
             },
-            size: 22
+            size: 28,
+            borderWidth: 2.5,
+            font: { color: '#ffffff' }
         },
         domain: {
             color: {
@@ -152,22 +141,43 @@ const careerGraphConfig = {
                     border: '#D68910'
                 }
             },
-            size: 25
+            size: 24,
+            borderWidth: 2,
+            font: { color: '#2C3E50' }
         },
-        role: {
+        skill: {
             color: {
-                background: '#9B59B6',
-                border: '#7D3C98',
+                background: '#3498DB',
+                border: '#2874A6',
                 highlight: {
-                    background: '#9B59B6',
-                    border: '#5B2C6F'
+                    background: '#3498DB',
+                    border: '#1B4F72'
                 },
                 hover: {
-                    background: '#AF7AC5',
-                    border: '#7D3C98'
+                    background: '#5DADE2',
+                    border: '#2874A6'
                 }
             },
-            size: 25
+            size: 22,
+            borderWidth: 2,
+            font: { color: '#ffffff' }
+        },
+        education: {
+            color: {
+                background: '#E74C3C',
+                border: '#C0392B',
+                highlight: {
+                    background: '#E74C3C',
+                    border: '#922B21'
+                },
+                hover: {
+                    background: '#EC7063',
+                    border: '#C0392B'
+                }
+            },
+            size: 20,
+            borderWidth: 1.5,
+            font: { color: '#ffffff' }
         }
     },
 
