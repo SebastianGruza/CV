@@ -1,0 +1,82 @@
+/* Career Knowledge Graph - Dynamic Visualization Styles */
+
+.career-graph-section {
+    margin-top: 40px;
+    padding: 40px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 10px;
+}
+
+.career-graph-section .section-title {
+    font-size: 24px;
+    color: #2C3E50;
+    border-bottom: 3px solid #3498DB;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.career-graph-description {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+#career-graph-pl, #career-graph-en {
+    width: 100%;
+    height: 600px;
+    border: 2px solid #2C3E50;
+    border-radius: 10px;
+    background: white;
+    position: relative;
+}
+
+.graph-legend {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #333;
+}
+
+/* Print styles - hide graph in print version */
+@media print {
+    .career-graph-section {
+        display: none !important;
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .career-graph-section {
+        padding: 20px;
+    }
+
+    #career-graph-pl, #career-graph-en {
+        height: 400px;
+    }
+
+    .graph-legend {
+        gap: 10px;
+        font-size: 12px;
+    }
+
+    .legend-color {
+        width: 16px;
+        height: 16px;
+    }
+}

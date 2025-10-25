@@ -511,6 +511,12 @@
             display: block;
         }
     </style>
+
+    <!-- Vis.js Network Visualization Library -->
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+
+    <!-- Career Graph Custom Styles -->
+    <link rel="stylesheet" href="assets/css/career-graph.css">
 </head>
 <body>
     <div class="lang-switch">
@@ -832,7 +838,23 @@
                         </tr>
                     </table>
 
-                    <p style="margin-top: 20px;"><strong>Dopasowanie: 100% wymagań + wszystkie nice-to-have</strong></p>
+                    <p style="margin-top: 20px;"><strong>Dopasowanie: 100% wymagań</strong></p>
+                </div>
+
+                <!-- Career Knowledge Graph -->
+                <div class="section career-graph-section">
+                    <h3 class="section-title">📊 Graf Wiedzy Kariery</h3>
+                    <p class="career-graph-description">
+                        Interaktywna wizualizacja mojej kariery jako grafu. <strong>Przeciągaj węzły, zbliżaj i przewijaj!</strong>
+                    </p>
+                    <div id="career-graph-pl"></div>
+                    <div class="graph-legend">
+                        <div class="legend-item"><div class="legend-color" style="background: #E74C3C;"></div><span>Wykształcenie</span></div>
+                        <div class="legend-item"><div class="legend-color" style="background: #3498DB;"></div><span>Umiejętności</span></div>
+                        <div class="legend-item"><div class="legend-color" style="background: #27AE60;"></div><span>Projekty</span></div>
+                        <div class="legend-item"><div class="legend-color" style="background: #F39C12;"></div><span>Domeny</span></div>
+                        <div class="legend-item"><div class="legend-color" style="background: #9B59B6;"></div><span>Role docelowe</span></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1144,7 +1166,23 @@
                         </tr>
                     </table>
 
-                    <p style="margin-top: 20px;"><strong>Match: 100% requirements + all nice-to-haves</strong></p>
+                    <p style="margin-top: 20px;"><strong>Match: 100% requirements</strong></p>
+                </div>
+
+                <!-- Career Knowledge Graph -->
+                <div class="section career-graph-section">
+                    <h3 class="section-title">📊 Career Knowledge Graph</h3>
+                    <p class="career-graph-description">
+                        Interactive visualization of my career as a graph. <strong>Drag nodes, zoom and pan!</strong>
+                    </p>
+                    <div id="career-graph-en"></div>
+                    <div class="graph-legend">
+                        <div class="legend-item"><div class="legend-color" style="background: #E74C3C;"></div><span>Education</span></div>
+                        <div class="legend-item"><div class="legend-color" style="background: #3498DB;"></div><span>Skills</span></div>
+                        <div class="legend-item"><div class="legend-color" style="background: #27AE60;"></div><span>Projects</span></div>
+                        <div class="legend-item"><div class="legend-color" style="background: #F39C12;"></div><span>Domains</span></div>
+                        <div class="legend-item"><div class="legend-color" style="background: #9B59B6;"></div><span>Target Roles</span></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1167,5 +1205,10 @@
             document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
         }
     </script>
+
+    <!-- Career Knowledge Graph Scripts -->
+    <script src="assets/js/career-graph-data.js"></script>
+    <script src="assets/js/career-graph-config.js"></script>
+    <script src="assets/js/career-graph-init.js"></script>
 </body>
 </html>
