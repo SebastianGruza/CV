@@ -281,17 +281,8 @@ const careerGraphData = {
             title: 'Designed efficient graph traversal and query patterns',
             font: { size: 10, color: '#7D3C98', strokeWidth: 2, strokeColor: '#ffffff' }
         },
-        {
-            from: 'senior_data_architect',
-            to: 'graph_db_engineer',
-            label: 'QUALIFIES_FOR',
-            color: { color: '#F39C12', opacity: 0.9 },
-            width: 4,
-            title: 'Senior Data Architect (Graph) experience directly qualifies for Graph DB Engineer role',
-            font: { size: 11, color: '#D68910', bold: true, strokeWidth: 2, strokeColor: '#ffffff' }
-        },
 
-        // ========== Knowledge Transfer Lead connections (3 connections) ==========
+        // ========== Knowledge Transfer Lead connections (1 connection) ==========
         {
             from: 'knowledge_transfer_lead',
             to: 'aml_risk_propagation',
@@ -300,24 +291,6 @@ const careerGraphData = {
             width: 3,
             title: 'Enabled team understanding of AML risk propagation algorithm',
             font: { size: 10, color: '#7D3C98', strokeWidth: 2, strokeColor: '#ffffff' }
-        },
-        {
-            from: 'knowledge_transfer_lead',
-            to: 'graph_algos',
-            label: 'TAUGHT',
-            color: { color: '#9B59B6', opacity: 0.8 },
-            width: 2,
-            title: 'Taught graph algorithms and probability to engineers and analysts',
-            font: { size: 10, color: '#7D3C98', strokeWidth: 2, strokeColor: '#ffffff' }
-        },
-        {
-            from: 'knowledge_transfer_lead',
-            to: 'graph_db_engineer',
-            label: 'QUALIFIES_FOR',
-            color: { color: '#F39C12', opacity: 0.8 },
-            width: 3,
-            title: 'Knowledge transfer & onboarding expertise qualifies for Graph DB Engineer (key requirement)',
-            font: { size: 10, color: '#D68910', strokeWidth: 2, strokeColor: '#ffffff' }
         },
 
         // ========== Projects → Domains (9 connections) ==========
@@ -367,30 +340,12 @@ const careerGraphData = {
             font: { size: 10, color: '#1E8449', strokeWidth: 2, strokeColor: '#ffffff' }
         },
         {
-            from: 'proximity_v2',
-            to: 'blockchain_analytics',
-            label: 'ADDRESSES',
-            color: { color: '#27AE60', opacity: 0.7 },
-            width: 2,
-            title: 'Proximity v2 continues blockchain analytics at scale',
-            font: { size: 10, color: '#1E8449', strokeWidth: 2, strokeColor: '#ffffff' }
-        },
-        {
             from: 'proximity_v3',
             to: 'billion_scale_graph',
             label: 'MODERNIZES',
             color: { color: '#27AE60', opacity: 0.7 },
             width: 2,
             title: 'Proximity v3 modernizes graph platform with cloud-native architecture',
-            font: { size: 10, color: '#1E8449', strokeWidth: 2, strokeColor: '#ffffff' }
-        },
-        {
-            from: 'proximity_v3',
-            to: 'blockchain_analytics',
-            label: 'ADDRESSES',
-            color: { color: '#27AE60', opacity: 0.7 },
-            width: 2,
-            title: 'Proximity v3 delivers cloud-native blockchain analytics',
             font: { size: 10, color: '#1E8449', strokeWidth: 2, strokeColor: '#ffffff' }
         },
         {
@@ -513,7 +468,7 @@ const careerGraphData = {
             font: { size: 10, color: '#2874A6', strokeWidth: 2, strokeColor: '#ffffff' }
         },
 
-        // ========== Skills → Domains (5 connections) ==========
+        // ========== Skills → Domains (4 connections) ==========
         {
             from: 'neo4j',
             to: 'aml_risk_propagation',
@@ -530,15 +485,6 @@ const careerGraphData = {
             color: { color: '#3498DB', opacity: 0.8 },
             width: 2,
             title: 'Graph algorithms expertise in AML risk propagation',
-            font: { size: 10, color: '#2874A6', strokeWidth: 2, strokeColor: '#ffffff' }
-        },
-        {
-            from: 'cypher',
-            to: 'aml_risk_propagation',
-            label: 'EXPERT_IN',
-            color: { color: '#3498DB', opacity: 0.8 },
-            width: 2,
-            title: 'Cypher expertise in AML risk scoring queries',
             font: { size: 10, color: '#2874A6', strokeWidth: 2, strokeColor: '#ffffff' }
         },
         {
@@ -560,7 +506,7 @@ const careerGraphData = {
             font: { size: 10, color: '#2874A6', strokeWidth: 2, strokeColor: '#ffffff' }
         },
 
-        // ========== Skills → Target Roles (7 connections) ==========
+        // ========== Skills → Target Roles (top 3 must-have from job description) ==========
         {
             from: 'neo4j',
             to: 'graph_db_engineer',
@@ -577,15 +523,6 @@ const careerGraphData = {
             color: { color: '#F39C12', opacity: 0.8 },
             width: 3,
             title: 'Cypher expertise strongly qualifies for Graph DB Engineer',
-            font: { size: 10, color: '#D68910', strokeWidth: 2, strokeColor: '#ffffff' }
-        },
-        {
-            from: 'graph_algos',
-            to: 'graph_db_engineer',
-            label: 'QUALIFIES_FOR',
-            color: { color: '#F39C12', opacity: 0.8 },
-            width: 3,
-            title: 'Graph algorithms knowledge strongly qualifies for Graph DB Engineer',
             font: { size: 10, color: '#D68910', strokeWidth: 2, strokeColor: '#ffffff' }
         },
         {
@@ -615,17 +552,8 @@ const careerGraphData = {
             title: 'Spring Framework expertise qualifies for Backend Engineer',
             font: { size: 10, color: '#D68910', strokeWidth: 2, strokeColor: '#ffffff' }
         },
-        {
-            from: 'distributed_systems',
-            to: 'graph_db_engineer',
-            label: 'QUALIFIES_FOR',
-            color: { color: '#F39C12', opacity: 0.7 },
-            width: 2,
-            title: 'Distributed systems experience qualifies for Graph DB Engineer (scalability)',
-            font: { size: 10, color: '#D68910', strokeWidth: 2, strokeColor: '#ffffff' }
-        },
 
-        // ========== Education → Skills (4 connections) ==========
+        // ========== Education → Skills (2 connections) ==========
         {
             from: 'msc_cs',
             to: 'graph_algos',
@@ -636,15 +564,6 @@ const careerGraphData = {
             font: { size: 10, color: '#C0392B', strokeWidth: 2, strokeColor: '#ffffff' }
         },
         {
-            from: 'msc_cs',
-            to: 'graph_db_engineer',
-            label: 'QUALIFIES',
-            color: { color: '#F39C12', opacity: 0.8 },
-            width: 3,
-            title: 'MSc (Inż.) in Computer Science meets formal education requirement',
-            font: { size: 10, color: '#D68910', bold: true, strokeWidth: 2, strokeColor: '#ffffff' }
-        },
-        {
             from: 'graph_theory_course',
             to: 'graph_algos',
             label: 'TAUGHT',
@@ -653,35 +572,8 @@ const careerGraphData = {
             title: 'Graph Theory course provided theoretical foundation',
             font: { size: 10, color: '#C0392B', strokeWidth: 2, strokeColor: '#ffffff' }
         },
-        {
-            from: 'graph_theory_course',
-            to: 'neo4j',
-            label: 'PREPARED_FOR',
-            color: { color: '#E74C3C', opacity: 0.6 },
-            width: 1,
-            title: 'Graph Theory foundation prepared for Neo4j work',
-            font: { size: 9, color: '#C0392B', strokeWidth: 2, strokeColor: '#ffffff' }
-        },
 
-        // ========== Skill Synergies (3 connections) ==========
-        {
-            from: 'neo4j',
-            to: 'cypher',
-            label: 'SYNERGY',
-            color: { color: '#3498DB', opacity: 0.6 },
-            width: 2,
-            title: 'Neo4j and Cypher work together seamlessly',
-            font: { size: 9, color: '#2874A6', strokeWidth: 2, strokeColor: '#ffffff' }
-        },
-        {
-            from: 'java',
-            to: 'spring',
-            label: 'SYNERGY',
-            color: { color: '#3498DB', opacity: 0.6 },
-            width: 2,
-            title: 'Java and Spring Framework combined experience (11+ years)',
-            font: { size: 9, color: '#2874A6', strokeWidth: 2, strokeColor: '#ffffff' }
-        },
+        // ========== Skill Synergies (1 connection) ==========
         {
             from: 'graph_algos',
             to: 'performance_optimization',
