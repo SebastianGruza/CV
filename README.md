@@ -7,6 +7,7 @@ This repository contains my professional CV, career knowledge graph, and portfol
 ```
 CV/
 ├── README.md                          # This file
+├── index.html                         # GitHub Pages redirect to cv-html/
 ├── docs/                              # CV documentation and research
 │   ├── 01_informacje_bazowe.md       # Base information (Polish)
 │   ├── 02_selling_points.md          # Career positioning strategies
@@ -15,10 +16,17 @@ CV/
 │   ├── 05_aws_migration.md           # AWS migration experience
 │   └── CV_Graph_Database_Engineer_PL.md  # Tailored CV for Graph DB Engineer role
 ├── cv-html/                           # Interactive HTML CV
-│   ├── cv_bilingual.html             # Main CV (PL/EN with language switcher)
+│   ├── cv_bilingual.html             # Main bilingual CV (PL/EN switcher)
 │   ├── cv.html                        # Simple HTML CV (deprecated)
-│   └── assets/
-│       └── SebastianGruza.jpg        # Profile photo
+│   └── assets/                        # CV assets
+│       ├── SebastianGruza.jpg        # Profile photo
+│       ├── SebastianGruza-careerGraphStatic.png  # Career graph thumbnail
+│       ├── css/
+│       │   └── career-graph.css      # Career graph visualization styles
+│       └── js/
+│           ├── career-graph-data.js  # Career graph data (vis.js format)
+│           ├── career-graph-config.js # Career graph configuration
+│           └── career-graph-init.js  # Career graph initialization
 ├── career-graph/                      # Interactive Career Knowledge Graph
 │   ├── README.md                      # Career Graph documentation
 │   ├── data/
@@ -34,13 +42,29 @@ CV/
 │   └── scripts/                       # Utility scripts
 │       ├── export_json.py            # Export Neo4j → JSON
 │       └── generate_graph.py         # Generate graph from data
-└── archive/                           # Deprecated/experimental files
-    └── generate_cv_pdf.py            # Old PDF generator (deprecated)
+├── archive/                           # Deprecated/experimental files
+│   └── generate_cv_pdf.py            # Old PDF generator (deprecated)
+└── SebastianGruza.pdf                # PDF version of CV
 ```
 
 ## 🎯 Featured Projects
 
-### 1. Interactive Career Knowledge Graph
+### 1. Bilingual Interactive CV
+A professional HTML CV with Polish/English language switcher, career graph visualization, and modal/lightbox features.
+
+**Features:**
+- Language switcher (PL/EN)
+- Career Knowledge Graph thumbnail with modal/lightbox view
+- Interactive vis.js career graph at bottom (drag nodes, zoom, pan)
+- QR code to GitHub Pages
+- Print-optimized (2-page layout)
+- Graph decorations (nodes & edges in header)
+
+**Tech Stack:** HTML5, CSS3, JavaScript, vis.js
+
+👉 [View CV](https://sebastiangruza.github.io/CV) | [Source](./cv-html/cv_bilingual.html)
+
+### 2. Interactive Career Knowledge Graph (Legacy)
 A 3D interactive visualization of my career as a graph database - showing skills, projects, technologies, and their relationships.
 
 **Features:**
@@ -51,22 +75,11 @@ A 3D interactive visualization of my career as a graph database - showing skills
 
 **Tech Stack:** Neo4j, Cypher, Three.js, D3.js
 
-👉 [View Demo](https://sebastiangruza.com/career-graph) | [Documentation](./career-graph/README.md)
-
-### 2. Bilingual Interactive CV
-A professional HTML CV with Polish/English language switcher, QR code, and graph-themed visual elements.
-
-**Features:**
-- Language switcher (PL/EN)
-- QR code to personal website
-- Print-optimized (2-page layout)
-- Graph decorations (nodes & edges in header)
-
-👉 [View CV](https://sebastiangruza.com/cv) | [Source](./cv-html/cv_bilingual.html)
+👉 [Documentation](./career-graph/README.md)
 
 ## 🔗 Links
 
-- **Website:** [sebastiangruza.com](https://sebastiangruza.com)
+- **CV Website:** [sebastiangruza.github.io/CV](https://sebastiangruza.github.io/CV)
 - **LinkedIn:** [sebastian-gruza-03a43162](https://www.linkedin.com/in/sebastian-gruza-03a43162/)
 - **GitHub:** [SebastianGruza](https://github.com/SebastianGruza)
 - **Email:** sebastian.gruza@gmail.com
