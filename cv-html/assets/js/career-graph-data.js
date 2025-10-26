@@ -9,7 +9,7 @@ const careerGraphData = {
         // ========== ROLES (purple, largest) ==========
         {
             id: 'senior_data_architect',
-            label: 'Senior Data\nArchitect\n(Graph)',
+            label: 'AML Graph Systems & Cloud Migration',
             group: 'role',
             title: 'Senior Data Architect (Graph): Designed & evolved production AML risk graph, led migrations Neo4j → MaprDB → AWS',
             level: 0,
@@ -17,7 +17,7 @@ const careerGraphData = {
         },
         {
             id: 'knowledge_transfer_lead',
-            label: 'Knowledge\nTransfer Lead',
+            label: 'Documentation & Mentorship (2016–2025)',
             group: 'role',
             title: 'Mentorship & onboarding: documented and explained AML risk propagation engine ("Proximity") to engineers, data analysts and leadership to ensure continuity (2016-2025)',
             level: 0,
@@ -25,7 +25,7 @@ const careerGraphData = {
         },
         {
             id: 'graph_db_engineer',
-            label: 'Graph DB\nEngineer',
+            label: 'Target Role — Neo4j, Cypher, Java',
             group: 'role',
             title: 'Target Role: Graph Database Engineer (100% match)',
             level: 0,
@@ -33,7 +33,7 @@ const careerGraphData = {
         },
         {
             id: 'backend_engineer',
-            label: 'Backend\nEngineer',
+            label: 'Java + Spring Ecosystem',
             group: 'role',
             title: 'Target Role: Backend Engineer (strong match)',
             level: 0,
@@ -51,7 +51,7 @@ const careerGraphData = {
         },
         {
             id: 'proximity_platform',
-            label: 'Proximity Risk\nScoring Platform',
+            label: '<b>Proximity Platform</b>\nProduction AML Graph (~1B nodes)',
             group: 'project',
             title: 'Graph-based AML risk propagation (internal proximity engine) - production graph ~1B nodes / 4-6B relationships',
             level: 1,
@@ -59,7 +59,7 @@ const careerGraphData = {
         },
         {
             id: 'neo4j_extensions',
-            label: 'Neo4j Custom\nProcedures',
+            label: '<b>Neo4j Custom Procedures</b>\nJava CALL Procedures',
             group: 'project',
             title: 'Developed internal CALL procedures and Cypher-exposed logic in Java to extend Neo4j functionality (2016-2019)',
             level: 1,
@@ -67,7 +67,7 @@ const careerGraphData = {
         },
         {
             id: 'proximity_v2',
-            label: 'Proximity v2\n(MaprDB)',
+            label: 'Proximity v2 (MaprDB)',
             group: 'project',
             title: 'Migrated to MaprDB for scale - millions of blockchain transactions (2019-2024)',
             level: 1,
@@ -75,7 +75,7 @@ const careerGraphData = {
         },
         {
             id: 'proximity_v3',
-            label: 'Proximity v3\n(AWS)',
+            label: '<b>Proximity v3 (AWS)</b>\nCloud Migration (DynamoDB, Iceberg)',
             group: 'project',
             title: 'Cloud-native AWS migration: S3, DynamoDB, Iceberg (2024-present)',
             level: 1,
@@ -83,11 +83,35 @@ const careerGraphData = {
         },
         {
             id: 'tsp_solver',
-            label: 'TSP Solver\n(GPU Evolutionary)',
+            label: '<b>TSP Solver (GPU)</b>\nHeuristic Optimization',
             group: 'project',
             title: 'GPU-accelerated Traveling Salesman Problem solver in Java/Aparapi. 50+ benchmarks with 0.0% deviation from optimal; scales to 9,882 cities (~3.57% deviation)',
             level: 1,
             size: 26
+        },
+        {
+            id: 'shiftgo_site',
+            label: 'shiftgo.site',
+            group: 'project',
+            title: 'Shift scheduling optimization platform built with Python & OR-Tools',
+            level: 1,
+            size: 22
+        },
+        {
+            id: 'ml_experiments',
+            label: 'ML & Deep\nLearning Projects',
+            group: 'project',
+            title: 'ML/Deep Learning experiments: TensorFlow, PyTorch on GPU (including MSc thesis)',
+            level: 1,
+            size: 22
+        },
+        {
+            id: 'torus_tiling',
+            label: 'TorusTiling\n(GitHub)',
+            group: 'project',
+            title: 'Torus tiling optimization - constraint solving with Python & OR-Tools',
+            level: 1,
+            size: 22
         },
 
         // ========== DOMAINS (orange, medium) ==========
@@ -131,6 +155,14 @@ const careerGraphData = {
             level: 2,
             size: 24
         },
+        {
+            id: 'graph_inference_layer',
+            label: 'Graph Inference & Scoring',
+            group: 'domain',
+            title: 'Intelligence layer on graph data: risk propagation scoring, heuristic search, recommendation-style logic over graph structures',
+            level: 2,
+            size: 26
+        },
 
         // ========== SKILLS (blue, smaller) ==========
         {
@@ -166,14 +198,6 @@ const careerGraphData = {
             size: 24
         },
         {
-            id: 'distributed_systems',
-            label: 'Distributed\nSystems',
-            group: 'skill',
-            title: 'MaprDB, AWS Cloud: scaling to billions of relationships',
-            level: 3,
-            size: 22
-        },
-        {
             id: 'spring',
             label: 'Spring\nFramework',
             group: 'skill',
@@ -205,11 +229,27 @@ const careerGraphData = {
             level: 3,
             size: 20
         },
+        {
+            id: 'python',
+            label: 'Python',
+            group: 'skill',
+            title: 'Python: ML experiments, optimization projects (OR-Tools), data processing',
+            level: 3,
+            size: 20
+        },
+        {
+            id: 'claude_ai',
+            label: 'AI-Accelerated\nDevelopment',
+            group: 'skill',
+            title: 'AI-assisted refactoring / prototyping (Claude Code) adopted in production-oriented migration work',
+            level: 3,
+            size: 20
+        },
 
         // ========== EDUCATION (red, smallest) ==========
         {
             id: 'msc_cs',
-            label: 'MSc (Inż.)\nComputer Science',
+            label: 'MSc (Inż.) Computer Science\nPerfect GPA 5.0 — Graph Algorithms',
             group: 'education',
             title: 'MSc (Inż.) in Computer Science, perfect GPA (5.0/5.0) - qualifies for Graph DB Engineer role',
             level: 4,
@@ -217,9 +257,9 @@ const careerGraphData = {
         },
         {
             id: 'graph_theory_course',
-            label: 'Graph Theory\nCourse',
+            label: 'BSc Studies\n(Licencjat)',
             group: 'education',
-            title: 'University course: Graph Theory (2010-2013) - theoretical foundation',
+            title: 'BSc Computer Science (2009-2013): Graph Theory, programming, probability theory - provided tutoring during studies',
             level: 4,
             size: 18
         }
@@ -468,7 +508,7 @@ const careerGraphData = {
             font: { size: 10, color: '#2874A6', strokeWidth: 2, strokeColor: '#ffffff' }
         },
 
-        // ========== Skills → Domains (4 connections) ==========
+        // ========== Skills → Domains (3 connections) ==========
         {
             from: 'neo4j',
             to: 'aml_risk_propagation',
@@ -485,15 +525,6 @@ const careerGraphData = {
             color: { color: '#3498DB', opacity: 0.8 },
             width: 2,
             title: 'Graph algorithms expertise in AML risk propagation',
-            font: { size: 10, color: '#2874A6', strokeWidth: 2, strokeColor: '#ffffff' }
-        },
-        {
-            from: 'distributed_systems',
-            to: 'billion_scale_graph',
-            label: 'ENABLES',
-            color: { color: '#3498DB', opacity: 0.7 },
-            width: 2,
-            title: 'Distributed systems knowledge enables billion-scale graph',
             font: { size: 10, color: '#2874A6', strokeWidth: 2, strokeColor: '#ffffff' }
         },
         {
@@ -553,7 +584,7 @@ const careerGraphData = {
             font: { size: 10, color: '#D68910', strokeWidth: 2, strokeColor: '#ffffff' }
         },
 
-        // ========== Education → Skills (2 connections) ==========
+        // ========== Education → Skills (3 connections) ==========
         {
             from: 'msc_cs',
             to: 'graph_algos',
@@ -562,6 +593,15 @@ const careerGraphData = {
             width: 2,
             title: 'MSc Computer Science taught advanced graph algorithms',
             font: { size: 10, color: '#C0392B', strokeWidth: 2, strokeColor: '#ffffff' }
+        },
+        {
+            from: 'msc_cs',
+            to: 'ml_experiments',
+            label: 'THESIS',
+            color: { color: '#E74C3C', opacity: 0.8 },
+            width: 2,
+            title: 'Zastosowanie głębokich sieci neuronowych do poprawy materiału nagranego na kasetach VHS',
+            font: { size: 10, color: '#C0392B', bold: true, strokeWidth: 2, strokeColor: '#ffffff' }
         },
         {
             from: 'graph_theory_course',
@@ -596,13 +636,13 @@ const careerGraphData = {
             font: { size: 9, color: '#1E8449', strokeWidth: 1, strokeColor: '#ffffff' }
         },
         {
-            from: 'proximity_platform',
+            from: 'vrp_tsw',
             to: 'tsp_solver',
             label: 'INSPIRED',
             color: { color: '#27AE60', opacity: 0.5 },
             width: 2,
             dashes: [5, 5],
-            title: 'Production graph work inspired GPU-accelerated TSP research solver',
+            title: 'VRP-TW optimization work inspired GPU-accelerated TSP research solver',
             font: { size: 9, color: '#1E8449', strokeWidth: 1, strokeColor: '#ffffff' }
         },
         {
@@ -672,6 +712,95 @@ const careerGraphData = {
             width: 2,
             title: 'Risk propagation in AML/KYC as production graph inference',
             font: { size: 10, color: '#1E8449', strokeWidth: 2, strokeColor: '#ffffff' }
+        },
+
+        // ========== Python & ML connections (3 connections) ==========
+        {
+            from: 'python',
+            to: 'ml_experiments',
+            label: 'ENABLES',
+            color: { color: '#3498DB', opacity: 0.8 },
+            width: 2,
+            title: 'Python used for ML/Deep Learning experiments',
+            font: { size: 10, color: '#2874A6', strokeWidth: 2, strokeColor: '#ffffff' }
+        },
+        {
+            from: 'python',
+            to: 'shiftgo_site',
+            label: 'IMPLEMENTED_IN',
+            color: { color: '#3498DB', opacity: 0.8 },
+            width: 2,
+            title: 'Python & OR-Tools used to build shiftgo.site optimization platform',
+            font: { size: 10, color: '#2874A6', strokeWidth: 2, strokeColor: '#ffffff' }
+        },
+        {
+            from: 'shiftgo_site',
+            to: 'graph_optimization_rnd',
+            label: 'APPLIED_IN',
+            color: { color: '#27AE60', opacity: 0.7 },
+            width: 2,
+            title: 'Shift scheduling as optimization problem (OR-Tools constraint solver)',
+            font: { size: 10, color: '#1E8449', strokeWidth: 2, strokeColor: '#ffffff' }
+        },
+
+        // ========== Claude Code & AI connections (1 connection) ==========
+        {
+            from: 'claude_ai',
+            to: 'proximity_v3',
+            label: 'ASSISTED',
+            color: { color: '#3498DB', opacity: 0.7 },
+            width: 2,
+            title: 'Used AI-assisted coding (Claude Code) during AWS cloud migration work',
+            font: { size: 10, color: '#2874A6', strokeWidth: 2, strokeColor: '#ffffff' }
+        },
+
+        // ========== TorusTiling project connections (2 connections) ==========
+        {
+            from: 'python',
+            to: 'torus_tiling',
+            label: 'IMPLEMENTED_IN',
+            color: { color: '#3498DB', opacity: 0.8 },
+            width: 2,
+            title: 'Python & OR-Tools used for torus tiling constraint optimization',
+            font: { size: 10, color: '#2874A6', strokeWidth: 2, strokeColor: '#ffffff' }
+        },
+        {
+            from: 'torus_tiling',
+            to: 'graph_optimization_rnd',
+            label: 'RESEARCH_IN',
+            color: { color: '#27AE60', opacity: 0.7 },
+            width: 2,
+            title: 'Torus tiling as constraint satisfaction and optimization research',
+            font: { size: 10, color: '#1E8449', strokeWidth: 2, strokeColor: '#ffffff' }
+        },
+
+        // ========== Graph Inference Layer connections (3 connections) ==========
+        {
+            from: 'proximity_platform',
+            to: 'graph_inference_layer',
+            label: 'IMPLEMENTS',
+            color: { color: '#F39C12', opacity: 0.8 },
+            width: 3,
+            title: 'Proximity platform implements graph inference layer: risk score propagation over graph structure',
+            font: { size: 10, color: '#D68910', bold: true, strokeWidth: 2, strokeColor: '#ffffff' }
+        },
+        {
+            from: 'tsp_solver',
+            to: 'graph_inference_layer',
+            label: 'APPLIES',
+            color: { color: '#F39C12', opacity: 0.7 },
+            width: 2,
+            title: 'TSP Solver applies graph inference: heuristic search and recommendation-style logic over graph',
+            font: { size: 10, color: '#D68910', strokeWidth: 2, strokeColor: '#ffffff' }
+        },
+        {
+            from: 'graph_inference_layer',
+            to: 'graph_db_engineer',
+            label: 'QUALIFIES_FOR',
+            color: { color: '#F39C12', opacity: 0.8 },
+            width: 3,
+            title: 'Graph inference & scoring experience (nice-to-have): analytics layer on top of graph data',
+            font: { size: 10, color: '#D68910', strokeWidth: 2, strokeColor: '#ffffff' }
         }
     ]
 };

@@ -109,7 +109,7 @@ const careerGraphConfig = {
             },
             size: 32,
             borderWidth: 3,
-            font: { color: '#ffffff' }
+            font: { color: '#2C3E50', multi: true, bold: { color: '#ffffff' } }
         },
         project: {
             color: {
@@ -126,7 +126,7 @@ const careerGraphConfig = {
             },
             size: 28,
             borderWidth: 2.5,
-            font: { color: '#ffffff' }
+            font: { color: '#2C3E50', multi: true, bold: { color: '#ffffff' } }
         },
         domain: {
             color: {
@@ -143,7 +143,7 @@ const careerGraphConfig = {
             },
             size: 24,
             borderWidth: 2,
-            font: { color: '#2C3E50' }
+            font: { color: '#2C3E50', multi: true }
         },
         skill: {
             color: {
@@ -177,7 +177,7 @@ const careerGraphConfig = {
             },
             size: 20,
             borderWidth: 1.5,
-            font: { color: '#ffffff' }
+            font: { color: '#ffffff', multi: true }
         }
     },
 
