@@ -310,6 +310,21 @@
             margin-top: 10px;
         }
 
+        .career-graph-hero .interactive-link {
+            display: inline-block;
+            margin-top: 8px;
+            font-size: 11px;
+            color: #3498DB;
+            text-decoration: none;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .career-graph-hero .interactive-link:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
         /* Modal/Lightbox */
         .graph-modal {
             display: none;
@@ -653,6 +668,7 @@
             <div class="career-graph-hero">
                 <img src="assets/SebastianGruza-careerGraphStatic.png" alt="Career Knowledge Graph - Sebastian Gruza" onclick="openGraphModal()">
                 <div class="caption">Career Knowledge Graph — built with vis.js to visualize career relationships (Neo4j-inspired)</div>
+                <a href="#career-graph-pl" class="interactive-link">Zobacz interaktywny graf →</a>
             </div>
 
             <div class="content">
@@ -990,6 +1006,7 @@
             <div class="career-graph-hero">
                 <img src="assets/SebastianGruza-careerGraphStatic.png" alt="Career Knowledge Graph - Sebastian Gruza" onclick="openGraphModal()">
                 <div class="caption">Career Knowledge Graph — built with vis.js to visualize career relationships (Neo4j-inspired)</div>
+                <a href="#career-graph-en" class="interactive-link">View interactive graph →</a>
             </div>
 
             <div class="content">
