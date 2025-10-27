@@ -667,7 +667,7 @@
             <!-- Career Graph Hero Section -->
             <div class="career-graph-hero">
                 <img src="assets/SebastianGruza-careerGraphStatic.png" alt="Career Knowledge Graph - Sebastian Gruza" onclick="openGraphModal()">
-                <div class="caption">Career Knowledge Graph — built with vis.js to visualize career relationships (Neo4j-inspired)</div>
+                <div class="caption">Graf Wiedzy Kariery — zbudowany z vis.js do wizualizacji powiązań w karierze (inspirowany Neo4j)</div>
                 <a href="#career-graph-pl" class="interactive-link">Zobacz interaktywny graf →</a>
             </div>
 
@@ -830,28 +830,40 @@
                     <h3 class="section-title">🏆 Projekty Open Source</h3>
 
                     <div class="highlight-box">
-                        <h3>TspSolver - GPU-Accelerated Traveling Salesman Problem Solver</h3>
-                        <p><strong>GitHub:</strong> <a href="https://github.com/SebastianGruza/TspSolver">https://github.com/SebastianGruza/TspSolver</a> | <span class="status-badge">Production-ready</span></p>
-                        <p>Solver problemu komiwojażera wykorzystujący GPU (Aparapi) i algorytmy genetyczne</p>
+                      <h3>TspSolver — Hybrydowy Algorytm Memetyczny z Akceleracją GPU dla TSP</h3>
+                      <p><strong>GitHub:</strong>
+                        <a href="https://github.com/SebastianGruza/TspSolver">github.com/SebastianGruza/TspSolver</a>
+                        | <span class="status-badge">Gotowy do produkcji / Research-grade</span>
+                      </p>
 
-                        <p><strong>Kluczowe osiągnięcia:</strong></p>
-                        <ul>
-                            <li>✅ <strong>50+ benchmark instances</strong> z <strong>0.0% odchyleniem</strong> od optymalnych rozwiązań</li>
-                            <li>✅ <strong>100+ TSP_LIB problems</strong> przetestowanych i zwalidowanych</li>
-                            <li>✅ Skalowalność do <strong>9,882 miast</strong> (3.57% odchylenie)</li>
-                            <li>✅ Novel <strong>colony-based evolution</strong> z adaptive merging</li>
-                            <li>✅ Custom <strong>GPU kernel</strong> dla masowo równoległych operacji GA</li>
-                        </ul>
+                      <p>Wysokowydajny solver dla <strong>Problemu Komiwojażera (TSP)</strong>, zbudowany w Java + Spring,
+                         wykorzystujący <strong>Aparapi</strong> do przeniesienia pełnego <strong>Hybrydowego Algorytmu Memetycznego</strong> na GPU.</p>
 
-                        <p><strong>Kontinuum doświadczenia z teorią grafów (12+ lat):</strong></p>
-                        <ul>
-                            <li><strong>2010-2013:</strong> Kurs "Teoria Grafów" na studiach - projekty programistyczne</li>
-                            <li><strong>2013-2014:</strong> VRP-TW - pierwsza komercyjna implementacja graph optimization</li>
-                            <li><strong>2016-2019:</strong> Neo4j graph algorithms - produkcyjna implementacja (3 lata)</li>
-                            <li><strong>Hobby:</strong> TspSolver - research-grade graph optimization solver</li>
-                        </ul>
+                      <p><strong>Kluczowe osiągnięcia:</strong></p>
+                      <ul>
+                        <li>✅ <strong>50+ instancji benchmarkowych</strong> rozwiązanych z <strong>0.0% odchyleniem</strong> od optimum</li>
+                        <li>✅ Przetestowane na <strong>100+ problemach TSP_LIB</strong> (zwalidowane wyniki, powtarzalne uruchomienia)</li>
+                        <li>✅ Skalowalność do <strong>9,882 miast</strong> z <strong>3.57% odchyleniem</strong></li>
+                        <li>✅ Autorski <strong>dwupoziomowy model wysp/kolonii</strong> dla zapewnienia różnorodności populacji</li>
+                        <li>✅ W pełni równoległy <strong>kernel GPU (TspGAKernel)</strong> wykonujący selekcję, krzyżowanie, mutację, przeszukiwanie Tabu</li>
+                      </ul>
 
-                        <p><strong>Technologie:</strong> Java, Spring Boot, Aparapi (GPU), Genetic Algorithms, Tabu Search</p>
+                      <p><strong>Innowacje algorytmiczne:</strong></p>
+                      <ul>
+                        <li>• <strong>Hybrydowy silnik memetyczny</strong> — łączy algorytm genetyczny (OX) z lokalnymi heurystykami 2-Opt, 3-Opt</li>
+                        <li>• <strong>Przeszukiwanie Tabu zoptymalizowane pod GPU</strong> z pamięcią opartą na strukturze BST</li>
+                        <li>• <strong>Adaptacyjna strategia "Fazy 2"</strong> wykrywająca stagnację i dynamicznie dostosowująca parametry wyszukiwania</li>
+                      </ul>
+
+                      <p><strong>Kontinuum doświadczenia z teorią grafów (12+ lat):</strong></p>
+                      <ul>
+                        <li><strong>2010–2013:</strong> Kurs "Teoria Grafów" – algorytmy ścieżek, heurystyki</li>
+                        <li><strong>2013–2014:</strong> VRP-TW — komercyjny silnik optymalizacji tras</li>
+                        <li><strong>2016–2019:</strong> Neo4j — produkcyjne algorytmy grafowe (propagacja ryzyka AML)</li>
+                        <li><strong>2020–obecnie:</strong> TspSolver — <em>badania nad wielkoskalową optymalizacją grafową z wykorzystaniem GPU</em></li>
+                      </ul>
+
+                      <p><strong>Technologie:</strong> Java, Spring Boot, Aparapi (GPU), Algorytmy Genetyczne, Algorytmy Memetyczne, Przeszukiwanie Tabu</p>
                     </div>
                 </div>
 
@@ -1165,32 +1177,48 @@
                 </div>
 
                 <div class="section">
-                    <h3 class="section-title">🏆 Open Source Projects</h3>
+                  <h3 class="section-title">🏆 Open Source Projects</h3>
 
-                    <div class="highlight-box">
-                        <h3>TspSolver - GPU-Accelerated Traveling Salesman Problem Solver</h3>
-                        <p><strong>GitHub:</strong> <a href="https://github.com/SebastianGruza/TspSolver">https://github.com/SebastianGruza/TspSolver</a> | <span class="status-badge">Production-ready</span></p>
-                        <p>Traveling Salesman Problem solver utilizing GPU (Aparapi) and genetic algorithms</p>
+                  <div class="highlight-box">
+                    <h3>TspSolver — GPU-Accelerated Hybrid Memetic Algorithm for TSP</h3>
+                    <p>
+                      <strong>GitHub:</strong>
+                      <a href="https://github.com/SebastianGruza/TspSolver">github.com/SebastianGruza/TspSolver</a> |
+                      <span class="status-badge">Research-grade / Production-ready</span>
+                    </p>
 
-                        <p><strong>Key Achievements:</strong></p>
-                        <ul>
-                            <li>✅ <strong>50+ benchmark instances</strong> with <strong>0.0% deviation</strong> from optimal solutions</li>
-                            <li>✅ <strong>100+ TSP_LIB problems</strong> tested and validated</li>
-                            <li>✅ Scales to <strong>9,882 cities</strong> (3.57% deviation)</li>
-                            <li>✅ Novel <strong>colony-based evolution</strong> with adaptive merging</li>
-                            <li>✅ Custom <strong>GPU kernel</strong> for massively parallel GA operations</li>
-                        </ul>
+                    <p>
+                      High-performance <strong>Traveling Salesman Problem (TSP)</strong> solver built in Java + Spring,
+                      leveraging <strong>Aparapi</strong> to offload a full <strong>Hybrid Memetic Algorithm</strong> to the GPU
+                      for massive parallel optimization.
+                    </p>
 
-                        <p><strong>Graph Theory Experience Continuum (12+ years):</strong></p>
-                        <ul>
-                            <li><strong>2010-2013:</strong> "Graph Theory" course - programming projects</li>
-                            <li><strong>2013-2014:</strong> VRP-TW - first commercial graph optimization implementation</li>
-                            <li><strong>2016-2019:</strong> Neo4j graph algorithms - production implementation (3 years)</li>
-                            <li><strong>Hobby:</strong> TspSolver - research-grade graph optimization solver</li>
-                        </ul>
+                    <p><strong>Key Achievements:</strong></p>
+                    <ul>
+                      <li>✅ Solved <strong>50+ benchmark instances</strong> with <strong>0.0% deviation</strong> from optimal solutions</li>
+                      <li>✅ Tested and validated on <strong>100+ TSP_LIB problems</strong> (reproducible performance)</li>
+                      <li>✅ Scales up to <strong>9,882 cities</strong> with <strong>3.57% deviation</strong></li>
+                      <li>✅ Custom <strong>Two-Level Island/Colony model</strong> ensuring robust population diversity</li>
+                      <li>✅ Fully parallel <strong>GPU kernel (TspGAKernel)</strong> running crossover, mutation, local search, and Tabu Search</li>
+                    </ul>
 
-                        <p><strong>Technologies:</strong> Java, Spring Boot, Aparapi (GPU), Genetic Algorithms, Tabu Search</p>
-                    </div>
+                    <p><strong>Algorithmic Innovations:</strong></p>
+                    <ul>
+                      <li>• <strong>Hybrid Memetic Engine</strong> — integrates Genetic Algorithm (OX) with 2-Opt, 3-Opt, and relocation heuristics</li>
+                      <li>• <strong>GPU-optimized Tabu Search</strong> using a BST-based memory structure for parallel lookup</li>
+                      <li>• <strong>Adaptive “Phase 2” Strategy</strong> detecting stagnation and dynamically tuning search parameters</li>
+                    </ul>
+
+                    <p><strong>Graph Theory Continuum (12+ years):</strong></p>
+                    <ul>
+                      <li><strong>2010–2013:</strong> “Graph Theory” university course — algorithmic projects (shortest paths, TSP heuristics)</li>
+                      <li><strong>2013–2014:</strong> VRP-TW — first commercial graph optimization engine</li>
+                      <li><strong>2016–2019:</strong> Neo4j — production-grade graph algorithms (AML risk propagation)</li>
+                      <li><strong>2020–present:</strong> TspSolver — <em>GPU-driven research in large-scale graph optimization</em></li>
+                    </ul>
+
+                    <p><strong>Technologies:</strong> Java, Spring Boot, Aparapi (GPU), Genetic Algorithms, Memetic Algorithms, Tabu Search</p>
+                  </div>
                 </div>
 
                 <div class="section">
