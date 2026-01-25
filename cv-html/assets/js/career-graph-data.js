@@ -8,12 +8,28 @@ const careerGraphData = {
     nodes: [
         // ========== ROLES (purple, largest) ==========
         {
+            id: 'gruzalab_software',
+            label: 'GruzaLab Software\n(B2B / JDG)',
+            group: 'role',
+            title: 'GruzaLab Software - sole proprietorship: B2B software, systems, DevOps and AI consulting',
+            level: 0,
+            size: 36
+        },
+        {
+            id: 'software_systems_engineer',
+            label: 'Software & Systems\nEngineer',
+            group: 'role',
+            title: 'Target Role: Software & Systems Engineer - combining software development with infrastructure expertise',
+            level: 0,
+            size: 36
+        },
+        {
             id: 'senior_data_architect',
             label: 'AML Graph Systems & Cloud Migration',
             group: 'role',
             title: 'Senior Data Architect (Graph): Designed & evolved production AML risk graph, led migrations Neo4j → MaprDB → AWS',
             level: 0,
-            size: 38
+            size: 34
         },
         {
             id: 'knowledge_transfer_lead',
@@ -21,15 +37,15 @@ const careerGraphData = {
             group: 'role',
             title: 'Mentorship & onboarding: documented and explained AML risk propagation engine ("Proximity") to engineers, data analysts and leadership to ensure continuity (2016-2025)',
             level: 0,
-            size: 32
+            size: 30
         },
         {
             id: 'graph_db_engineer',
-            label: 'Target Role — Neo4j, Cypher, Java',
+            label: 'Graph Database\nEngineer',
             group: 'role',
-            title: 'Target Role: Graph Database Engineer (100% match)',
+            title: 'Target Role: Graph Database Engineer (strong match - Neo4j, Cypher, Java)',
             level: 0,
-            size: 34
+            size: 32
         },
         {
             id: 'backend_engineer',
@@ -115,6 +131,30 @@ const careerGraphData = {
         },
 
         // ========== DOMAINS (orange, medium) ==========
+        {
+            id: 'systems_devops',
+            label: 'Systems & DevOps',
+            group: 'domain',
+            title: 'Systems & DevOps: infrastructure automation, containerization, monitoring, CI/CD',
+            level: 2,
+            size: 28
+        },
+        {
+            id: 'homelab_infra',
+            label: 'Homelab\nProxmox VE',
+            group: 'domain',
+            title: 'Homelab infrastructure: Proxmox VE (KVM/LXC), virtualization, automation',
+            level: 2,
+            size: 26
+        },
+        {
+            id: 'ai_gpu_domain',
+            label: 'AI / GPU\nComputing',
+            group: 'domain',
+            title: 'AI & GPU computing: Deep Learning, GPU workloads (RTX 3090), LLM-assisted development',
+            level: 2,
+            size: 26
+        },
         {
             id: 'graph_optimization_rnd',
             label: 'Graph\nOptimization R&D',
@@ -801,6 +841,113 @@ const careerGraphData = {
             width: 3,
             title: 'Graph inference & scoring experience (nice-to-have): analytics layer on top of graph data',
             font: { size: 10, color: '#D68910', strokeWidth: 2, strokeColor: '#ffffff' }
+        },
+
+        // ========== GruzaLab Software connections ==========
+        {
+            from: 'gruzalab_software',
+            to: 'software_systems_engineer',
+            label: 'BRAND_FOR',
+            color: { color: '#9B59B6', opacity: 0.9 },
+            width: 4,
+            title: 'GruzaLab Software is the B2B brand for Software & Systems Engineering services',
+            font: { size: 11, color: '#7D3C98', bold: true, strokeWidth: 2, strokeColor: '#ffffff' }
+        },
+        {
+            from: 'gruzalab_software',
+            to: 'systems_devops',
+            label: 'OFFERS',
+            color: { color: '#9B59B6', opacity: 0.8 },
+            width: 3,
+            title: 'GruzaLab offers Systems & DevOps consulting services',
+            font: { size: 10, color: '#7D3C98', strokeWidth: 2, strokeColor: '#ffffff' }
+        },
+        {
+            from: 'gruzalab_software',
+            to: 'ai_gpu_domain',
+            label: 'OFFERS',
+            color: { color: '#9B59B6', opacity: 0.8 },
+            width: 3,
+            title: 'GruzaLab offers AI & GPU computing consulting',
+            font: { size: 10, color: '#7D3C98', strokeWidth: 2, strokeColor: '#ffffff' }
+        },
+
+        // ========== Software & Systems Engineer connections ==========
+        {
+            from: 'java',
+            to: 'software_systems_engineer',
+            label: 'QUALIFIES_FOR',
+            color: { color: '#F39C12', opacity: 0.9 },
+            width: 4,
+            title: 'Java expertise (11+ years) qualifies for Software & Systems Engineer',
+            font: { size: 11, color: '#D68910', bold: true, strokeWidth: 2, strokeColor: '#ffffff' }
+        },
+        {
+            from: 'spring',
+            to: 'software_systems_engineer',
+            label: 'QUALIFIES_FOR',
+            color: { color: '#F39C12', opacity: 0.8 },
+            width: 3,
+            title: 'Spring Framework expertise qualifies for Software & Systems Engineer',
+            font: { size: 10, color: '#D68910', strokeWidth: 2, strokeColor: '#ffffff' }
+        },
+        {
+            from: 'systems_devops',
+            to: 'software_systems_engineer',
+            label: 'QUALIFIES_FOR',
+            color: { color: '#F39C12', opacity: 0.8 },
+            width: 3,
+            title: 'Systems & DevOps experience qualifies for Software & Systems Engineer',
+            font: { size: 10, color: '#D68910', strokeWidth: 2, strokeColor: '#ffffff' }
+        },
+
+        // ========== Systems & DevOps connections ==========
+        {
+            from: 'homelab_infra',
+            to: 'systems_devops',
+            label: 'DEMONSTRATES',
+            color: { color: '#F39C12', opacity: 0.8 },
+            width: 3,
+            title: 'Homelab infrastructure demonstrates hands-on Systems & DevOps experience',
+            font: { size: 10, color: '#D68910', strokeWidth: 2, strokeColor: '#ffffff' }
+        },
+        {
+            from: 'aws',
+            to: 'systems_devops',
+            label: 'PART_OF',
+            color: { color: '#3498DB', opacity: 0.8 },
+            width: 2,
+            title: 'AWS Cloud is part of Systems & DevOps skillset',
+            font: { size: 10, color: '#2874A6', strokeWidth: 2, strokeColor: '#ffffff' }
+        },
+
+        // ========== AI / GPU connections ==========
+        {
+            from: 'ml_experiments',
+            to: 'ai_gpu_domain',
+            label: 'BELONGS_TO',
+            color: { color: '#27AE60', opacity: 0.8 },
+            width: 2,
+            title: 'ML & Deep Learning projects belong to AI/GPU domain',
+            font: { size: 10, color: '#1E8449', strokeWidth: 2, strokeColor: '#ffffff' }
+        },
+        {
+            from: 'tsp_solver',
+            to: 'ai_gpu_domain',
+            label: 'USES',
+            color: { color: '#27AE60', opacity: 0.8 },
+            width: 2,
+            title: 'TSP Solver uses GPU acceleration (Aparapi)',
+            font: { size: 10, color: '#1E8449', strokeWidth: 2, strokeColor: '#ffffff' }
+        },
+        {
+            from: 'claude_ai',
+            to: 'ai_gpu_domain',
+            label: 'BELONGS_TO',
+            color: { color: '#3498DB', opacity: 0.8 },
+            width: 2,
+            title: 'AI-assisted development belongs to AI/GPU domain',
+            font: { size: 10, color: '#2874A6', strokeWidth: 2, strokeColor: '#ffffff' }
         }
     ]
 };
