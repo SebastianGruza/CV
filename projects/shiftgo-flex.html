@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShiftGo FLEX – AI-powered Shift Scheduling | GruzaLab Software</title>
+    <meta name="description" content="ShiftGo FLEX – globalny SaaS do generowania i naprawiania grafików zmianowych. Bez kont, bez konfiguracji, klik → gotowy wynik.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        a {
+            color: #3498DB;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #2C3E50;
+        }
+
+        .navbar-logo span {
+            color: #3498DB;
+        }
+
+        .navbar-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .navbar-links a {
+            color: #2C3E50;
+            font-weight: 500;
+        }
+
+        .lang-switch {
+            background: #f0f0f0;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .lang-switch button {
+            padding: 8px 15px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 13px;
+            transition: all 0.3s;
+        }
+
+        .lang-switch button.active {
+            background: linear-gradient(135deg, #2C3E50 0%, #3498DB 100%);
+            color: white;
+        }
+
+        /* Hero */
+        .project-hero {
+            background: linear-gradient(135deg, #2C3E50 0%, #3498DB 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .project-hero h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .project-hero .subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 25px auto;
+            line-height: 1.5;
+        }
+
+        .project-hero .btn {
+            padding: 12px 28px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            background: white;
+            color: #2C3E50;
+        }
+
+        .project-hero .btn:hover {
+            background: #f0f0f0;
+            text-decoration: none;
+        }
+
+        /* Content */
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 50px 40px;
+        }
+
+        .content h2 {
+            font-size: 24px;
+            color: #2C3E50;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #3498DB;
+        }
+
+        .content h2:first-child {
+            margin-top: 0;
+        }
+
+        .content h3 {
+            font-size: 19px;
+            color: #2C3E50;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .content p {
+            color: #555;
+            margin-bottom: 12px;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .content ul {
+            color: #555;
+            margin-bottom: 15px;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .content li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            font-size: 15px;
+        }
+
+        .content li::before {
+            content: "•";
+            color: #3498DB;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .highlight-box {
+            background: white;
+            border-left: 4px solid #3498DB;
+            padding: 20px 25px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .highlight-box p {
+            color: #2C3E50;
+            font-style: italic;
+            font-size: 16px;
+            margin-bottom: 0;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .tech-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-top: 3px solid #3498DB;
+        }
+
+        .tech-card h4 {
+            color: #2C3E50;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .tech-card ul {
+            margin-bottom: 0;
+        }
+
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+            margin: 15px 0;
+        }
+
+        .audience-tag {
+            background: white;
+            padding: 10px 15px;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 14px;
+            color: #2C3E50;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.06);
+        }
+
+        .model-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .model-box {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .model-box h4 {
+            color: #2C3E50;
+            margin-bottom: 12px;
+            font-size: 17px;
+        }
+
+        .model-box.free {
+            border-top: 3px solid #27AE60;
+        }
+
+        .model-box.pro {
+            border-top: 3px solid #F39C12;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #2C3E50 0%, #3498DB 100%);
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: opacity 0.3s;
+        }
+
+        .back-link:hover {
+            opacity: 0.9;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2C3E50;
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            padding: 25px 40px;
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: rgba(255,255,255,0.9);
+        }
+
+        .footer-links {
+            margin-top: 10px;
+        }
+
+        .footer-links a {
+            margin: 0 15px;
+        }
+
+        /* Language content */
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 20px;
+            }
+
+            .project-hero {
+                padding: 40px 20px;
+            }
+
+            .project-hero h1 {
+                font-size: 26px;
+            }
+
+            .project-hero .subtitle {
+                font-size: 15px;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .content h2 {
+                font-size: 21px;
+            }
+
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .model-comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .audience-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="../" class="navbar-logo">Gruza<span>Lab</span> Software</a>
+        <div class="navbar-links">
+            <a href="../">Home</a>
+            <a href="../cv/">CV</a>
+            <div class="lang-switch">
+                <button onclick="switchLanguage('pl')" class="lang-btn active" data-lang="pl">PL</button>
+                <button onclick="switchLanguage('en')" class="lang-btn" data-lang="en">EN</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- POLISH VERSION -->
+    <div class="lang-content active" id="content-pl">
+        <section class="project-hero">
+            <h1>ShiftGo FLEX</h1>
+            <p class="subtitle">AI-powered Shift Repair & Scheduling (SaaS)</p>
+            <a href="https://shiftgo.site" class="btn" target="_blank" rel="noopener">shiftgo.site →</a>
+        </section>
+
+        <div class="content">
+            <h2>Czym jest ShiftGo FLEX?</h2>
+            <div class="highlight-box">
+                <p>Lekki, operacyjny system do zarządzania grafikami zmianowymi dla małych i średnich zespołów.</p>
+            </div>
+            <p>
+                ShiftGo FLEX to autorski SaaS zaprojektowany jako narzędzie operacyjne — nie system HR ani ERP.
+                Produkt celuje globalnie (w szczególności rynki Africa / LATAM), gdzie kluczowe są: prostota,
+                brak biurokracji, szybkość działania na mobile i niskie bariery wejścia.
+            </p>
+            <div class="highlight-box">
+                <p>Cel: jutro i za tydzień wszystko działa.</p>
+            </div>
+
+            <h2>Główna idea produktu</h2>
+            <p>
+                ShiftGo nie koncentruje się na „idealnej optymalizacji". Koncentruje się na realnym problemie managera:
+                plan był OK, rzeczywistość się zmieniła, ktoś nie przyszedł, ktoś się zamienił, grafik się rozjechał.
+            </p>
+
+            <h3>Repair (Napraw grafik)</h3>
+            <p>Kluczowa funkcja produktu:</p>
+            <ul>
+                <li>Użytkownik wkleja grafik (np. z Excela)</li>
+                <li>Oznacza, kto faktycznie pracował</li>
+                <li>System naprawia tylko przyszłość</li>
+                <li>Przeszłość pozostaje faktem</li>
+            </ul>
+            <p>Bez zaczynania od nowa, bez utraty kontekstu, bez ręcznego przepisywania.</p>
+
+            <h2>Model FREE (świadoma prostota)</h2>
+            <p>Wersja FREE działa bez logowania, bez kont użytkowników, bez skomplikowanej konfiguracji solvera.</p>
+            <p>Założenia architektoniczne:</p>
+            <ul>
+                <li>Jedna „golden konfiguracja"</li>
+                <li>Minimalna liczba twardych ograniczeń (OFF jako hard constraint)</li>
+                <li>Rolling horizon (okno czasu zamiast historii miesięcy)</li>
+                <li>Automatyczne rozszerzanie grafiku</li>
+                <li>Lokalne przechowywanie danych (localStorage)</li>
+                <li>Tymczasowe linki udostępniania (TTL ~72h)</li>
+            </ul>
+            <p>Celem było zbudowanie produktu, który działa od razu, nie wymaga szkolenia i nie odstrasza złożonością.</p>
+
+            <h2>Architektura i technologia</h2>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <h4>Backend</h4>
+                    <ul>
+                        <li>Python + Flask</li>
+                        <li>Asynchroniczne przetwarzanie zadań solvera</li>
+                        <li>Redis: kolejka, cache, TTL storage</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <h4>Bezpieczeństwo</h4>
+                    <ul>
+                        <li>Linki share o wysokiej entropii (Base64URL, 160-bit)</li>
+                        <li>Brak indeksowania publicznych grafików</li>
+                        <li>Rate limiting + warunkowe CAPTCHA (Cloudflare Turnstile)</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <h4>Solver</h4>
+                    <ul>
+                        <li>Własna warstwa optymalizacyjna (constraint-based)</li>
+                        <li>Quick Preview (~10s)</li>
+                        <li>Final Schedule / Repair (~60s)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Najważniejsze decyzje projektowe</h2>
+            <p>
+                ShiftGo powstał po doświadczeniu z „ciężkim" systemem planowania (HEAVY), który był funkcjonalnie
+                rozbudowany, ale trudny w użyciu. Wnioski:
+            </p>
+            <ul>
+                <li>Więcej opcji ≠ więcej użytkowników</li>
+                <li>Prostota zwiększa adopcję</li>
+                <li>PRO nie może łamać DNA FREE</li>
+            </ul>
+            <p>
+                Nawet wersja PRO zachowuje prostotę. Funkcje płatne koncentrują się na stabilności i kontroli
+                (np. stały link, historia wersji). Unika się budowy „constraint buildera" i przeładowanego UI.
+            </p>
+
+            <h2>Model biznesowy</h2>
+            <div class="model-comparison">
+                <div class="model-box free">
+                    <h4>FREE</h4>
+                    <ul>
+                        <li>W pełni funkcjonalny generator i repair</li>
+                        <li>Jeden obowiązujący grafik</li>
+                        <li>Link share z TTL</li>
+                        <li>Brak trwałej archiwizacji</li>
+                    </ul>
+                </div>
+                <div class="model-box pro">
+                    <h4>PRO (koncepcja)</h4>
+                    <ul>
+                        <li>Stały link zespołu (bez wygasania)</li>
+                        <li>Historia wersji</li>
+                        <li>Wiele zespołów</li>
+                        <li>Dodatkowe reguły operacyjne</li>
+                        <li>Większa skala i horyzont planowania</li>
+                    </ul>
+                </div>
+            </div>
+            <p>Model zaprojektowany pod spokojny, organiczny wzrost — bez VC i bez agresywnego feature creep.</p>
+
+            <h2>Dla kogo jest ShiftGo?</h2>
+            <div class="audience-grid">
+                <div class="audience-tag">Ochrona</div>
+                <div class="audience-tag">Hotele</div>
+                <div class="audience-tag">Małe fabryki</div>
+                <div class="audience-tag">Call centers</div>
+                <div class="audience-tag">Kliniki</div>
+                <div class="audience-tag">Zespoły 5–50 osób</div>
+            </div>
+            <p>
+                Manager, który dziś pracuje w Excelu, wysyła zdjęcia grafiku przez WhatsApp
+                i potrzebuje szybkiego, stabilnego rozwiązania.
+            </p>
+
+            <h2>Wartość projektowa (z perspektywy GruzaLab)</h2>
+            <p>ShiftGo FLEX to przykład:</p>
+            <ul>
+                <li>Projektowania SaaS w duchu minimalizmu funkcjonalnego</li>
+                <li>Świadomego ograniczania złożoności</li>
+                <li>Łączenia AI/solverów z UX-first podejściem</li>
+                <li>Budowania architektury skalowalnej przy jednoczesnym zachowaniu prostoty produktu</li>
+            </ul>
+            <p>
+                Projekt łączy optymalizację operacyjną, infrastrukturę chmurową,
+                przemyślaną architekturę backendu oraz długofalową strategię produktową.
+            </p>
+
+            <a href="../" class="back-link">← Powrót do strony głównej</a>
+        </div>
+    </div>
+
+    <!-- ENGLISH VERSION -->
+    <div class="lang-content" id="content-en">
+        <section class="project-hero">
+            <h1>ShiftGo FLEX</h1>
+            <p class="subtitle">AI-powered Shift Repair & Scheduling (SaaS)</p>
+            <a href="https://shiftgo.site" class="btn" target="_blank" rel="noopener">shiftgo.site →</a>
+        </section>
+
+        <div class="content">
+            <h2>What is ShiftGo FLEX?</h2>
+            <div class="highlight-box">
+                <p>A lightweight, operational system for managing shift schedules for small and medium-sized teams.</p>
+            </div>
+            <p>
+                ShiftGo FLEX is a proprietary SaaS designed as an operational tool — not an HR or ERP system.
+                The product targets global markets (especially Africa / LATAM), where simplicity,
+                zero bureaucracy, mobile speed, and low entry barriers are key.
+            </p>
+            <div class="highlight-box">
+                <p>Goal: tomorrow and next week, everything works.</p>
+            </div>
+
+            <h2>Core product idea</h2>
+            <p>
+                ShiftGo doesn't focus on "perfect optimization." It focuses on the real manager's problem:
+                the plan was OK, reality changed, someone didn't show up, someone swapped shifts, the schedule fell apart.
+            </p>
+
+            <h3>Repair (Fix the schedule)</h3>
+            <p>The key product feature:</p>
+            <ul>
+                <li>User pastes a schedule (e.g. from Excel)</li>
+                <li>Marks who actually worked</li>
+                <li>System repairs only the future</li>
+                <li>Past remains as fact</li>
+            </ul>
+            <p>No starting from scratch, no losing context, no manual rewriting.</p>
+
+            <h2>FREE model (deliberate simplicity)</h2>
+            <p>The FREE version works without login, without user accounts, without complex solver configuration.</p>
+            <p>Architectural assumptions:</p>
+            <ul>
+                <li>One "golden configuration"</li>
+                <li>Minimal hard constraints (OFF as hard constraint)</li>
+                <li>Rolling horizon (time window instead of months of history)</li>
+                <li>Automatic schedule expansion</li>
+                <li>Local data storage (localStorage)</li>
+                <li>Temporary sharing links (TTL ~72h)</li>
+            </ul>
+            <p>The goal was to build a product that works immediately, requires no training, and doesn't intimidate with complexity.</p>
+
+            <h2>Architecture and technology</h2>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <h4>Backend</h4>
+                    <ul>
+                        <li>Python + Flask</li>
+                        <li>Asynchronous solver task processing</li>
+                        <li>Redis: queue, cache, TTL storage</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <h4>Security</h4>
+                    <ul>
+                        <li>High-entropy share links (Base64URL, 160-bit)</li>
+                        <li>No indexing of public schedules</li>
+                        <li>Rate limiting + conditional CAPTCHA (Cloudflare Turnstile)</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <h4>Solver</h4>
+                    <ul>
+                        <li>Custom optimization layer (constraint-based)</li>
+                        <li>Quick Preview (~10s)</li>
+                        <li>Final Schedule / Repair (~60s)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Key design decisions</h2>
+            <p>
+                ShiftGo was born from experience with a "heavy" scheduling system (HEAVY), which was feature-rich
+                but difficult to use. Conclusions:
+            </p>
+            <ul>
+                <li>More options ≠ more users</li>
+                <li>Simplicity increases adoption</li>
+                <li>PRO must not break the DNA of FREE</li>
+            </ul>
+            <p>
+                Even the PRO version maintains simplicity. Paid features focus on stability and control
+                (e.g. permanent link, version history). No "constraint builder" or overloaded UI.
+            </p>
+
+            <h2>Business model</h2>
+            <div class="model-comparison">
+                <div class="model-box free">
+                    <h4>FREE</h4>
+                    <ul>
+                        <li>Fully functional generator and repair</li>
+                        <li>One active schedule</li>
+                        <li>Share link with TTL</li>
+                        <li>No persistent archiving</li>
+                    </ul>
+                </div>
+                <div class="model-box pro">
+                    <h4>PRO (concept)</h4>
+                    <ul>
+                        <li>Permanent team link (no expiration)</li>
+                        <li>Version history</li>
+                        <li>Multiple teams</li>
+                        <li>Additional operational rules</li>
+                        <li>Larger scale and planning horizon</li>
+                    </ul>
+                </div>
+            </div>
+            <p>Model designed for calm, organic growth — no VC and no aggressive feature creep.</p>
+
+            <h2>Who is ShiftGo for?</h2>
+            <div class="audience-grid">
+                <div class="audience-tag">Security</div>
+                <div class="audience-tag">Hotels</div>
+                <div class="audience-tag">Small factories</div>
+                <div class="audience-tag">Call centers</div>
+                <div class="audience-tag">Clinics</div>
+                <div class="audience-tag">Teams of 5–50</div>
+            </div>
+            <p>
+                A manager who works in Excel today, sends schedule photos via WhatsApp,
+                and needs a fast, stable solution.
+            </p>
+
+            <h2>Project value (from GruzaLab perspective)</h2>
+            <p>ShiftGo FLEX is an example of:</p>
+            <ul>
+                <li>Designing SaaS with functional minimalism in mind</li>
+                <li>Deliberately limiting complexity</li>
+                <li>Combining AI/solvers with a UX-first approach</li>
+                <li>Building scalable architecture while maintaining product simplicity</li>
+            </ul>
+            <p>
+                The project combines operational optimization, cloud infrastructure,
+                thoughtful backend architecture, and long-term product strategy.
+            </p>
+
+            <a href="../" class="back-link">← Back to homepage</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div>&copy; 2026 GruzaLab Software</div>
+        <div class="footer-links">
+            <a href="../">Home</a>
+            <a href="../cv/">CV</a>
+        </div>
+    </footer>
+
+    <script>
+        function switchLanguage(lang) {
+            document.querySelectorAll('.lang-content').forEach(el => {
+                el.classList.remove('active');
+            });
+            document.getElementById('content-' + lang).classList.add('active');
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
+        }
+    </script>
+</body>
+</html>
