@@ -161,6 +161,94 @@
             background: white;
         }
 
+        /* AI Operator Section */
+        .ai-operator {
+            margin-top: -10px;
+        }
+
+        .ai-operator-wrap {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+        }
+
+        .ai-operator-lead {
+            max-width: 860px;
+            margin: 0 auto 35px auto;
+            text-align: center;
+            color: #555;
+            font-size: 17px;
+        }
+
+        .ai-operator-lead p + p {
+            margin-top: 14px;
+        }
+
+        .ai-operator-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .ai-operator-card {
+            background: #f8f9fa;
+            padding: 28px;
+            border-radius: 10px;
+            border-top: 3px solid #3498DB;
+        }
+
+        .ai-operator-card h3 {
+            color: #2C3E50;
+            margin-bottom: 14px;
+            font-size: 18px;
+        }
+
+        .ai-operator-card ul {
+            list-style: none;
+            color: #666;
+        }
+
+        .ai-operator-card li {
+            margin-bottom: 10px;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .ai-operator-card li::before {
+            content: "•";
+            color: #3498DB;
+            position: absolute;
+            left: 0;
+        }
+
+        .ai-operator-note {
+            margin-top: 24px;
+            padding: 18px 22px;
+            border-left: 3px solid #3498DB;
+            background: #f8f9fa;
+            color: #555;
+            font-size: 15px;
+        }
+
+        .ai-operator-cta {
+            margin-top: 28px;
+            padding-top: 8px;
+            text-align: center;
+        }
+
+        .ai-operator-cta p {
+            max-width: 700px;
+            margin: 12px auto 0 auto;
+            color: #666;
+        }
+
+        .text-link {
+            display: inline-block;
+            margin-top: 14px;
+            font-weight: 500;
+        }
+
         /* Services Grid */
         .services-grid {
             display: grid;
@@ -366,6 +454,14 @@
                 font-size: 24px;
             }
 
+            .ai-operator-wrap {
+                padding: 28px 22px;
+            }
+
+            .ai-operator-grid {
+                grid-template-columns: 1fr;
+            }
+
             .services-grid {
                 grid-template-columns: 1fr;
             }
@@ -401,6 +497,71 @@
             <div class="hero-buttons">
                 <a href="cv/" class="btn btn-primary">Zobacz moje CV</a>
                 <a href="#contact-pl" class="btn btn-secondary">Skontaktuj się</a>
+            </div>
+        </section>
+
+        <!-- Personal AI Operator -->
+        <section class="section ai-operator" id="personal-ai-operator-pl">
+            <div class="ai-operator-wrap">
+                <h2 class="section-title">Osobisty Operator AI</h2>
+                <div class="ai-operator-lead">
+                    <p>Wdrażam prywatne systemy pracy z AI dla founderów, ekspertów i małych firm.</p>
+                    <p>To rozwiązanie dla osób, które mają wiele projektów, dużo kontekstu w głowie i za mało czasu, żeby wszystko porządkować ręcznie. Zamiast kolejnego „chatbota” tworzę dopasowane środowisko pracy z AI, które pomaga ogarniać priorytety, projekty, notatki, komunikację i kolejne kroki.</p>
+                </div>
+                <div class="ai-operator-grid">
+                    <div class="ai-operator-card">
+                        <h3>Dla kogo to jest</h3>
+                        <ul>
+                            <li>founderzy i współzałożyciele</li>
+                            <li>eksperci budujący markę osobistą</li>
+                            <li>lekarze, konsultanci, specjaliści</li>
+                            <li>małe firmy z chaosem projektowym i operacyjnym</li>
+                            <li>osoby, które chcą odzyskać fokus zamiast tonąć w rozproszonych zadaniach</li>
+                        </ul>
+                    </div>
+                    <div class="ai-operator-card">
+                        <h3>W czym pomaga</h3>
+                        <ul>
+                            <li>porządkowanie projektów i priorytetów</li>
+                            <li>utrzymywanie kontekstu między tematami</li>
+                            <li>zamiana luźnych pomysłów w konkretne następne kroki</li>
+                            <li>wsparcie w organizacji pracy i decyzyjności</li>
+                            <li>pomoc w pracy nad marką osobistą i publikacjami</li>
+                            <li>tworzenie prywatnego zaplecza operacyjnego zamiast kolejnego narzędzia do klikania</li>
+                        </ul>
+                    </div>
+                    <div class="ai-operator-card">
+                        <h3>Jak to działa</h3>
+                        <ul>
+                            <li>analizuję sposób pracy klienta i jego główne use case’y</li>
+                            <li>przygotowuję dopasowanego asystenta lub agenta AI</li>
+                            <li>konfiguruję pamięć, strukturę pracy i kanał komunikacji</li>
+                            <li>w razie potrzeby dokładam narzędzia do projektów i organizacji pracy</li>
+                            <li>dalej rozwijam i stroję system tak, żeby realnie pomagał, a nie był tylko ciekawostką</li>
+                        </ul>
+                    </div>
+                    <div class="ai-operator-card">
+                        <h3>Co może obejmować</h3>
+                        <ul>
+                            <li>prywatny agent AI</li>
+                            <li>wdrożenie workflow pracy z AI</li>
+                            <li>uporządkowanie wiedzy i kontekstu</li>
+                            <li>komunikację przez Telegram lub inne lekkie kanały</li>
+                            <li>środowisko robocze hostowane i utrzymywane przeze mnie</li>
+                            <li>dodatkowe narzędzia do projektów, zadań i organizacji pracy</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ai-operator-note">
+                    To usługa wdrożeniowa i opiekuńcza — nie gotowy „box product”. Każde wdrożenie dopasowuję do sposobu pracy klienta.
+                </div>
+                <div class="ai-operator-cta">
+                    <h3>Chcesz sprawdzić, czy taki system miałby sens u Ciebie?</h3>
+                    <p>Najlepiej zacząć od krótkiej rozmowy i prostego pilota.</p>
+                    <a href="#contact-pl" class="btn btn-primary" style="margin-top: 20px;">Skontaktuj się</a>
+                    <br>
+                    <a href="#contact-pl" class="text-link">Porozmawiajmy o pilotażu</a>
+                </div>
             </div>
         </section>
 
@@ -547,6 +708,71 @@
             <div class="hero-buttons">
                 <a href="cv/" class="btn btn-primary">View my CV</a>
                 <a href="#contact-en" class="btn btn-secondary">Contact me</a>
+            </div>
+        </section>
+
+        <!-- Personal AI Operator -->
+        <section class="section ai-operator" id="personal-ai-operator-en">
+            <div class="ai-operator-wrap">
+                <h2 class="section-title">Personal AI Operator</h2>
+                <div class="ai-operator-lead">
+                    <p>I implement private AI work systems for founders, experts and small businesses.</p>
+                    <p>This is for people who run multiple projects, carry too much context in their head, and do not want to waste time manually organizing everything. Instead of offering “just another chatbot”, I build a tailored AI workspace that helps organize priorities, projects, notes, communication and next steps.</p>
+                </div>
+                <div class="ai-operator-grid">
+                    <div class="ai-operator-card">
+                        <h3>Who it is for</h3>
+                        <ul>
+                            <li>founders and co-founders</li>
+                            <li>experts building a personal brand</li>
+                            <li>doctors, consultants and specialists</li>
+                            <li>small businesses dealing with project and operational chaos</li>
+                            <li>people who want to regain focus instead of drowning in fragmented tasks</li>
+                        </ul>
+                    </div>
+                    <div class="ai-operator-card">
+                        <h3>What it helps with</h3>
+                        <ul>
+                            <li>organizing projects and priorities</li>
+                            <li>preserving context across multiple topics</li>
+                            <li>turning loose ideas into actionable next steps</li>
+                            <li>supporting decision-making and day-to-day organization</li>
+                            <li>assisting with personal brand work and content flow</li>
+                            <li>creating a private operational layer instead of another tool to click through</li>
+                        </ul>
+                    </div>
+                    <div class="ai-operator-card">
+                        <h3>How it works</h3>
+                        <ul>
+                            <li>I analyze how the client works and identify the main use cases</li>
+                            <li>I prepare a tailored AI assistant or agent</li>
+                            <li>I configure memory, workflow structure and communication channels</li>
+                            <li>when needed, I add lightweight project and organization tools</li>
+                            <li>I continue tuning the system so it remains useful in real work, not just as a demo</li>
+                        </ul>
+                    </div>
+                    <div class="ai-operator-card">
+                        <h3>What it may include</h3>
+                        <ul>
+                            <li>a private AI agent</li>
+                            <li>AI workflow implementation</li>
+                            <li>knowledge and context organization</li>
+                            <li>Telegram or other lightweight communication channels</li>
+                            <li>hosted and managed work environment</li>
+                            <li>additional tools for projects, tasks and operational organization</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ai-operator-note">
+                    This is an implementation and managed service, not a boxed product. Each setup is tailored to the client’s way of working.
+                </div>
+                <div class="ai-operator-cta">
+                    <h3>Want to see whether this would make sense for your work?</h3>
+                    <p>The best first step is a short conversation and a simple pilot.</p>
+                    <a href="#contact-en" class="btn btn-primary" style="margin-top: 20px;">Contact me</a>
+                    <br>
+                    <a href="#contact-en" class="text-link">Let’s discuss a pilot</a>
+                </div>
             </div>
         </section>
 
