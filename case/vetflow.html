@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case: VetFlow — Jedna osoba, praca całego zespołu | GruzaLab</title>
+    <meta name="description" content="55 000 linii kodu, 35+ funkcjonalności, 10 dni. Jak jedna osoba zbudowała system wielkości software house'u.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        a { color: #3498DB; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* Navigation */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #2C3E50;
+        }
+
+        .navbar-logo span { color: #3498DB; }
+
+        .navbar-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .navbar-links a {
+            color: #2C3E50;
+            font-weight: 500;
+        }
+
+        .lang-switch {
+            background: #f0f0f0;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .lang-switch button {
+            padding: 8px 15px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 13px;
+            transition: all 0.3s;
+        }
+
+        .lang-switch button.active {
+            background: linear-gradient(135deg, #2C3E50 0%, #3498DB 100%);
+            color: white;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: white;
+            padding: 100px 40px 80px;
+            text-align: center;
+        }
+
+        .hero-label {
+            display: inline-block;
+            background: rgba(52, 152, 219, 0.2);
+            border: 1px solid rgba(52, 152, 219, 0.4);
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 30px;
+            color: #7ec8e3;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero .subtitle {
+            font-size: 20px;
+            opacity: 0.85;
+            max-width: 650px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            padding: 14px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: #3498DB;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #2980b9;
+            text-decoration: none;
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.4);
+        }
+
+        .btn-ghost:hover {
+            background: rgba(255,255,255,0.1);
+            text-decoration: none;
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: white;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 800;
+            color: #2C3E50;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #888;
+            margin-top: 6px;
+        }
+
+        /* Sections */
+        .section {
+            padding: 70px 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 28px;
+            color: #2C3E50;
+            margin-bottom: 30px;
+        }
+
+        .section-alt {
+            background: white;
+        }
+
+        .section-wide {
+            max-width: 1100px;
+        }
+
+        /* Scope grid */
+        .scope-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+
+        .scope-item {
+            background: #f8f9fa;
+            padding: 18px 22px;
+            border-radius: 8px;
+            border-left: 3px solid #3498DB;
+            font-size: 15px;
+            color: #444;
+        }
+
+        .scope-summary {
+            padding: 24px 28px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e8f4f8 100%);
+            border-radius: 8px;
+            font-size: 17px;
+            color: #2C3E50;
+            line-height: 1.7;
+        }
+
+        .scope-summary strong {
+            color: #0f3460;
+        }
+
+        /* Process */
+        .process-list {
+            list-style: none;
+        }
+
+        .process-list li {
+            padding: 18px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 16px;
+            color: #555;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .process-list li::before {
+            content: attr(data-num);
+            position: absolute;
+            left: 0;
+            font-weight: 800;
+            color: #3498DB;
+            font-size: 18px;
+        }
+
+        .process-list li:last-child {
+            border-bottom: none;
+        }
+
+        .quote-block {
+            margin-top: 30px;
+            padding: 22px 28px;
+            border-left: 4px solid #3498DB;
+            background: #f8f9fa;
+            font-size: 17px;
+            color: #2C3E50;
+            font-style: italic;
+        }
+
+        /* Impact */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .impact-item {
+            padding: 24px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .impact-item h4 {
+            color: #2C3E50;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .impact-item p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Use cases */
+        .usecases {
+            list-style: none;
+        }
+
+        .usecases li {
+            padding: 14px 0 14px 24px;
+            position: relative;
+            font-size: 16px;
+            color: #555;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .usecases li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #3498DB;
+            font-weight: bold;
+        }
+
+        /* Steps */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .step {
+            text-align: center;
+            padding: 24px 16px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .step-num {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            line-height: 36px;
+            border-radius: 50%;
+            background: #3498DB;
+            color: white;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .step h4 {
+            color: #2C3E50;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        .step p {
+            color: #888;
+            font-size: 13px;
+        }
+
+        /* CTA section */
+        .cta-section {
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+            text-align: center;
+            padding: 80px 40px;
+            color: white;
+        }
+
+        .cta-section h2 {
+            font-size: 30px;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.4;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2C3E50;
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            padding: 25px 40px;
+            font-size: 14px;
+        }
+
+        .footer a { color: rgba(255,255,255,0.9); }
+        .footer-links { margin-top: 10px; }
+        .footer-links a { margin: 0 15px; }
+
+        /* Language */
+        .lang-content { display: none; }
+        .lang-content.active { display: block; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar { padding: 15px 20px; }
+            .hero { padding: 60px 20px 50px; }
+            .hero h1 { font-size: 30px; }
+            .hero .subtitle { font-size: 17px; }
+            .stats-bar { gap: 30px; padding: 30px 20px; }
+            .stat-number { font-size: 28px; }
+            .section { padding: 50px 20px; }
+            .section-title { font-size: 24px; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .steps-grid { grid-template-columns: 1fr 1fr; }
+            .scope-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .steps-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="../" class="navbar-logo">Gruza<span>Lab</span> Software</a>
+        <div class="navbar-links">
+            <a href="../">← Strona główna</a>
+            <div class="lang-switch">
+                <button onclick="switchLanguage('pl')" class="lang-btn active" data-lang="pl">PL</button>
+                <button onclick="switchLanguage('en')" class="lang-btn" data-lang="en">EN</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== POLISH ==================== -->
+    <div class="lang-content active" id="content-pl">
+
+        <section class="hero">
+            <div class="hero-label">Case study</div>
+            <h1>Jedna osoba. Praca całego zespołu.</h1>
+            <p class="subtitle">
+                W 10 dni zbudowaliśmy pełny system dla klinik weterynaryjnych — zakres, na który software house potrzebuje miesiąca i kilkuosobowego zespołu.
+            </p>
+            <a href="#scope-pl" class="btn btn-primary">Zobacz jak to działa</a>
+        </section>
+
+        <div class="stats-bar">
+            <div class="stat">
+                <div class="stat-number">55 000+</div>
+                <div class="stat-label">linii kodu</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">120+</div>
+                <div class="stat-label">commitów</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">35+</div>
+                <div class="stat-label">funkcjonalności</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">10</div>
+                <div class="stat-label">dni</div>
+            </div>
+        </div>
+
+        <!-- Co zostało zrobione -->
+        <section class="section" id="scope-pl">
+            <h2 class="section-title">Co zostało zrobione</h2>
+            <div class="scope-grid">
+                <div class="scope-item">Pełny flow wizyty weterynaryjnej — 6 sekcji</div>
+                <div class="scope-item">Moduł szczepień z raportami do PIW</div>
+                <div class="scope-item">Magazyn z automatycznym rozchodem</div>
+                <div class="scope-item">Katalog produktów i słowniki (411 chorób, 419 ras)</div>
+                <div class="scope-item">Szyfrowanie danych — AES-256-GCM</div>
+                <div class="scope-item">Dwuskładnikowe logowanie (TOTP + SMS + backup)</div>
+                <div class="scope-item">8 typów dokumentów PDF</div>
+                <div class="scope-item">RODO — usuwanie, eksport, audit log</div>
+                <div class="scope-item">Importer danych z dwóch legacy systemów</div>
+                <div class="scope-item">Kreator stron dla klinik — 6 szablonów</div>
+                <div class="scope-item">Pełne testy bezpieczeństwa — auth, IDOR, SQLi, XSS</div>
+                <div class="scope-item">11 rund testów jakościowych (E2E)</div>
+            </div>
+            <div class="scope-summary">
+                W normalnym trybie to <strong>4–8 tygodni pracy</strong> kilkuosobowego zespołu z budżetem <strong>75–100 tys. PLN</strong>.<br>
+                Tutaj: <strong>10 dni, jedna osoba.</strong>
+            </div>
+        </section>
+
+        <!-- Jak wygląda ta praca -->
+        <div class="section-alt">
+            <section class="section">
+                <h2 class="section-title">Jak wygląda ta praca</h2>
+                <ol class="process-list">
+                    <li data-num="01">Zadania są rozbijane na precyzyjne elementy z jasnym kryterium odbioru</li>
+                    <li data-num="02">Implementacja jest delegowana i nadzorowana — nie ręcznie klepana</li>
+                    <li data-num="03">Każda zmiana przechodzi weryfikację i testy, zanim wejdzie do systemu</li>
+                    <li data-num="04">Jakość pilnuje się systemowo — spójność, bezpieczeństwo, konwencje</li>
+                    <li data-num="05">Decyzje podejmowane są na poziomie architektury, nie pojedynczych linijek</li>
+                </ol>
+                <div class="quote-block">
+                    Nie piszemy wszystkiego ręcznie.<br>
+                    Zarządzamy procesem, który to robi.
+                </div>
+            </section>
+        </div>
+
+        <!-- Co to zmienia -->
+        <section class="section">
+            <h2 class="section-title">Co to zmienia</h2>
+            <div class="impact-grid">
+                <div class="impact-item">
+                    <h4>Mniej ludzi</h4>
+                    <p>Nie potrzebujesz 5-osobowego zespołu, żeby zbudować pełny system. Wystarczy jeden operator i dobrze postawiony proces.</p>
+                </div>
+                <div class="impact-item">
+                    <h4>Szybsze wdrożenia</h4>
+                    <p>Tygodnie zamiast miesięcy. MVP w 1–2 tygodnie, nie kwartał.</p>
+                </div>
+                <div class="impact-item">
+                    <h4>Mniej chaosu</h4>
+                    <p>Backlog, testy, jakość, dokumentacja — utrzymywane systemowo, nie „kiedyś to ogarniemy".</p>
+                </div>
+                <div class="impact-item">
+                    <h4>Pełna kontrola nad jakością</h4>
+                    <p>Każdy commit weryfikowany. Audyty bezpieczeństwa. Architektura przed kodem.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gdzie to działa -->
+        <div class="section-alt">
+            <section class="section">
+                <h2 class="section-title">Gdzie to działa</h2>
+                <ul class="usecases">
+                    <li>Systemy dla klinik i gabinetów — zarządzanie wizytami, pacjentami, dokumentacją</li>
+                    <li>Systemy operacyjne dla firm usługowych — procesy, raporty, integracje</li>
+                    <li>Wewnętrzne narzędzia i dashboardy — szyte na miarę, zamiast kolejnego SaaS-a</li>
+                    <li>Migracje z legacy systemów — import danych, utrzymanie ciągłości</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Jak zaczynamy -->
+        <section class="section">
+            <h2 class="section-title">Jak zaczynamy</h2>
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <h4>Wybieramy obszar</h4>
+                    <p>Jeden konkretny problem lub proces do ogarnięcia</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <h4>Wdrażamy</h4>
+                    <p>System gotowy w 1–2 tygodnie, nie miesiące</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <h4>Pokazujemy efekt</h4>
+                    <p>Realny, mierzalny wynik — nie prezentacja</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">4</div>
+                    <h4>Rozwijamy dalej</h4>
+                    <p>Kolejne moduły, integracje, skalowanie</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <h2>Chcesz zobaczyć, ile Twoja firma może zrobić szybciej?</h2>
+            <a href="../#contact-pl" class="btn btn-primary">Umów rozmowę</a>
+        </section>
+
+    </div>
+
+    <!-- ==================== ENGLISH ==================== -->
+    <div class="lang-content" id="content-en">
+
+        <section class="hero">
+            <div class="hero-label">Case study</div>
+            <h1>One person. The output of a whole team.</h1>
+            <p class="subtitle">
+                In 10 days we built a complete system for veterinary clinics — scope that normally takes a software house a month and a multi-person team.
+            </p>
+            <a href="#scope-en" class="btn btn-primary">See how it works</a>
+        </section>
+
+        <div class="stats-bar">
+            <div class="stat">
+                <div class="stat-number">55,000+</div>
+                <div class="stat-label">lines of code</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">120+</div>
+                <div class="stat-label">commits</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">35+</div>
+                <div class="stat-label">features</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">10</div>
+                <div class="stat-label">days</div>
+            </div>
+        </div>
+
+        <!-- What was built -->
+        <section class="section" id="scope-en">
+            <h2 class="section-title">What was built</h2>
+            <div class="scope-grid">
+                <div class="scope-item">Complete veterinary visit flow — 6 sections</div>
+                <div class="scope-item">Vaccination module with government reports</div>
+                <div class="scope-item">Inventory with automated stock management</div>
+                <div class="scope-item">Product catalog and dictionaries (411 diseases, 419 breeds)</div>
+                <div class="scope-item">Data encryption — AES-256-GCM</div>
+                <div class="scope-item">Two-factor authentication (TOTP + SMS + backup)</div>
+                <div class="scope-item">8 types of PDF documents</div>
+                <div class="scope-item">GDPR — deletion, export, audit log</div>
+                <div class="scope-item">Data importer from two legacy systems</div>
+                <div class="scope-item">Clinic website builder — 6 templates</div>
+                <div class="scope-item">Full security testing — auth, IDOR, SQLi, XSS</div>
+                <div class="scope-item">11 rounds of quality assurance (E2E)</div>
+            </div>
+            <div class="scope-summary">
+                Normally this is <strong>4–8 weeks of work</strong> for a multi-person team with a budget of <strong>€17–23k</strong>.<br>
+                Here: <strong>10 days, one person.</strong>
+            </div>
+        </section>
+
+        <!-- How the work looks -->
+        <div class="section-alt">
+            <section class="section">
+                <h2 class="section-title">How the work looks</h2>
+                <ol class="process-list">
+                    <li data-num="01">Tasks are broken into precise elements with clear acceptance criteria</li>
+                    <li data-num="02">Implementation is delegated and supervised — not hand-coded line by line</li>
+                    <li data-num="03">Every change goes through review and testing before entering the system</li>
+                    <li data-num="04">Quality is maintained systemically — consistency, security, conventions</li>
+                    <li data-num="05">Decisions are made at the architecture level, not individual lines of code</li>
+                </ol>
+                <div class="quote-block">
+                    We don't write everything by hand.<br>
+                    We manage the process that does.
+                </div>
+            </section>
+        </div>
+
+        <!-- What it changes -->
+        <section class="section">
+            <h2 class="section-title">What it changes</h2>
+            <div class="impact-grid">
+                <div class="impact-item">
+                    <h4>Fewer people needed</h4>
+                    <p>You don't need a 5-person team to build a full system. One operator and a solid process is enough.</p>
+                </div>
+                <div class="impact-item">
+                    <h4>Faster delivery</h4>
+                    <p>Weeks instead of months. MVP in 1–2 weeks, not a quarter.</p>
+                </div>
+                <div class="impact-item">
+                    <h4>Less chaos</h4>
+                    <p>Backlog, tests, quality, documentation — maintained systemically, not "we'll get to it later".</p>
+                </div>
+                <div class="impact-item">
+                    <h4>Full quality control</h4>
+                    <p>Every commit reviewed. Security audits. Architecture before code.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Where it works -->
+        <div class="section-alt">
+            <section class="section">
+                <h2 class="section-title">Where it works</h2>
+                <ul class="usecases">
+                    <li>Clinic and practice systems — visits, patients, documentation</li>
+                    <li>Operational systems for service businesses — processes, reports, integrations</li>
+                    <li>Internal tools and dashboards — custom-built, instead of yet another SaaS</li>
+                    <li>Legacy system migrations — data import, continuity</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- How we start -->
+        <section class="section">
+            <h2 class="section-title">How we start</h2>
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <h4>Pick an area</h4>
+                    <p>One specific problem or process to tackle</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <h4>We build it</h4>
+                    <p>System ready in 1–2 weeks, not months</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <h4>Show the result</h4>
+                    <p>Real, measurable outcome — not a slide deck</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">4</div>
+                    <h4>Scale from there</h4>
+                    <p>More modules, integrations, growth</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <h2>Want to see how much faster your company can move?</h2>
+            <a href="../#contact-en" class="btn btn-primary">Book a conversation</a>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div>© 2026 GruzaLab Software</div>
+        <div class="footer-links">
+            <a href="../">Strona główna</a>
+            <a href="../cv/">CV</a>
+        </div>
+    </footer>
+
+    <script>
+        function switchLanguage(lang) {
+            document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+            document.getElementById('content-' + lang).classList.add('active');
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
+        }
+    </script>
+</body>
+</html>
