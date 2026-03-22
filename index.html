@@ -221,6 +221,110 @@
             line-height: 1.6;
         }
 
+        .feedback-block {
+            max-width: 900px;
+            margin: 0 auto 50px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            overflow: hidden;
+        }
+
+        .feedback-header {
+            background: linear-gradient(135deg, #2C3E50 0%, #3498DB 100%);
+            color: white;
+            padding: 22px 28px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .feedback-body {
+            padding: 28px;
+        }
+
+        .feedback-compare {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 20px;
+            align-items: start;
+        }
+
+        .feedback-old, .feedback-new {
+            padding: 18px;
+            border-radius: 8px;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .feedback-old {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            color: #7f1d1d;
+        }
+
+        .feedback-old .chain {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 10px;
+            font-size: 13px;
+        }
+
+        .feedback-old .chain span {
+            background: #fee2e2;
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+
+        .feedback-old .chain .arrow { background: none; color: #b91c1c; }
+
+        .feedback-new {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            color: #14532d;
+        }
+
+        .feedback-new .chain {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 10px;
+            font-size: 13px;
+        }
+
+        .feedback-new .chain span {
+            background: #dcfce7;
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+
+        .feedback-new .chain .arrow { background: none; color: #15803d; }
+
+        .feedback-vs {
+            font-size: 24px;
+            font-weight: 800;
+            color: #ccc;
+            align-self: center;
+            padding-top: 15px;
+        }
+
+        .feedback-bottom {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 15px;
+            color: #2C3E50;
+            line-height: 1.6;
+        }
+
+        .feedback-bottom strong {
+            color: #0f3460;
+        }
+
         .process-quote {
             text-align: center;
             max-width: 650px;
@@ -363,6 +467,8 @@
             .proof-stats { gap: 25px; }
             .proof-stat-num { font-size: 26px; }
             .process-grid { grid-template-columns: 1fr; }
+            .feedback-compare { grid-template-columns: 1fr; }
+            .feedback-vs { display: none; }
             .services-grid { grid-template-columns: 1fr; }
             .clients-grid { grid-template-columns: 1fr; }
             .whofor-grid { grid-template-columns: 1fr; }
@@ -455,6 +561,39 @@
                     <div class="process-card">
                         <h4>Decyzje na poziomie architektury</h4>
                         <p>Szyfrowanie, skalowalność, integracje — wszystko zaprojektowane przed pierwszą linijką kodu. Architektura, nie improwizacja.</p>
+                    </div>
+                </div>
+
+                <div class="feedback-block">
+                    <div class="feedback-header">Dlaczego to jest szybkie naprawdę — nie tylko na papierze</div>
+                    <div class="feedback-body">
+                        <div class="feedback-compare">
+                            <div class="feedback-old">
+                                <div class="chain">
+                                    <span>użytkownik</span><span class="arrow">→</span>
+                                    <span>analityk</span><span class="arrow">→</span>
+                                    <span>PM</span><span class="arrow">→</span>
+                                    <span>dev</span><span class="arrow">→</span>
+                                    <span>tester</span><span class="arrow">→</span>
+                                    <span>PM</span><span class="arrow">→</span>
+                                    <span>użytkownik</span>
+                                </div>
+                                Każdy krok to opóźnienie, utracony kontekst, pytania zwrotne. Bug zgłoszony rano trafia na produkcję za tydzień. Nowa funkcja — za miesiąc.
+                            </div>
+                            <div class="feedback-vs">vs</div>
+                            <div class="feedback-new">
+                                <div class="chain">
+                                    <span>użytkownik</span><span class="arrow">→</span>
+                                    <span>system</span><span class="arrow">→</span>
+                                    <span>użytkownik</span>
+                                </div>
+                                Jeden operator zarządza całą pętlą. Zgłoszenie → analiza → implementacja → test → deploy. Bez kolejek, bez gry w głuchy telefon. Bug naprawiony tego samego dnia. Ficzer — w dwa.
+                            </div>
+                        </div>
+                        <div class="feedback-bottom">
+                            Tradycyjny zespół traci <strong>80% czasu</strong> na komunikację między rolami.<br>
+                            Tu ten czas wraca do budowania.
+                        </div>
                     </div>
                 </div>
 
@@ -657,6 +796,39 @@
                     <div class="process-card">
                         <h4>Architecture-level decisions</h4>
                         <p>Encryption, scalability, integrations — all designed before the first line of code. Architecture, not improvisation.</p>
+                    </div>
+                </div>
+
+                <div class="feedback-block">
+                    <div class="feedback-header">Why it's actually fast — not just on paper</div>
+                    <div class="feedback-body">
+                        <div class="feedback-compare">
+                            <div class="feedback-old">
+                                <div class="chain">
+                                    <span>user</span><span class="arrow">→</span>
+                                    <span>analyst</span><span class="arrow">→</span>
+                                    <span>PM</span><span class="arrow">→</span>
+                                    <span>dev</span><span class="arrow">→</span>
+                                    <span>tester</span><span class="arrow">→</span>
+                                    <span>PM</span><span class="arrow">→</span>
+                                    <span>user</span>
+                                </div>
+                                Every step means delay, lost context, back-and-forth questions. A bug reported in the morning hits production in a week. A new feature — in a month.
+                            </div>
+                            <div class="feedback-vs">vs</div>
+                            <div class="feedback-new">
+                                <div class="chain">
+                                    <span>user</span><span class="arrow">→</span>
+                                    <span>system</span><span class="arrow">→</span>
+                                    <span>user</span>
+                                </div>
+                                One operator manages the entire loop. Report → analysis → implementation → test → deploy. No queues, no telephone game. Bug fixed the same day. Feature — in two.
+                            </div>
+                        </div>
+                        <div class="feedback-bottom">
+                            A traditional team loses <strong>80% of its time</strong> on communication between roles.<br>
+                            Here, that time goes back into building.
+                        </div>
                     </div>
                 </div>
 
